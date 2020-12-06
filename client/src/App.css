@@ -4,7 +4,7 @@ body {
     font-weight: 700;
     margin: 0;
     padding: 0;
-    background-image: url("./img/texture.jpg");
+    /*background-image: url("./img/texture.jpg");*/
 }
 
 #navigation {
@@ -17,7 +17,8 @@ body {
 
 
 .navbar-motto {
-    margin-bottom: 15rem;
+    color: brown;
+    margin-top: 10rem;
     font-weight: 700;
     font-size: 50px;
 }
@@ -232,7 +233,29 @@ li:hover > ul.drop-menu li:nth-child(6) {
     }
 }
 
+#section {
+height: auto;
+}
+
+#sidebar {
+    height: 350px;
+    background-color: grey;
+}
+
+.image {
+    max-width: 100%;
+}
+
+#body {
+    position: relative;
+    top: 320px;
+}
+
 .fa-plus-circle {
+    color: brown;
+}
+
+.fa-minus-circle {
     color: brown;
 }
 
@@ -274,11 +297,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
     transition: .2s ease-in;
 }
 /*lg*/
-@media screen and (min-width: 992px) {
-    #position {
-        padding-top: 10rem;
-        font-size: 4vh;
-    }
+@media screen and (min-width: 992px) and (max-width: 1024px) {
 
     #corpo {
         position: absolute;
@@ -293,6 +312,92 @@ li:hover > ul.drop-menu li:nth-child(6) {
         top: 2000px;
     }
 
+    #logo-1st {
+        position: absolute;
+        z-index: 2;
+        /*background-color: red;*/
+        height: 100px;
+    }
+
+    #body-resp {
+        position: relative;
+        top: 450px;
+    }
+
+    .ml-6 {
+        margin-left: 4.5rem;
+    }
+
+    #logo {
+        margin-left: 18rem;
+        width: 35%;
+    }
+
+    #navigation {
+        margin-top: 7rem;
+    }
+
+    .w-5 {
+        width:5%;
+    }
+}
+
+/*xl*/
+@media screen and (min-width: 1025px) {
+    #position {
+        padding-top: 2rem;
+        font-size: 4vh;
+    }
+
+    #section {
+        height: auto;
+    }
+
+    #sidebar {
+        height: 350px;
+        background-color: grey;
+    }
+
+    .image {
+        max-width: 100%;
+    }
+
+    #body {
+        position: relative;
+        top: 320px;
+    }
+
+    #corpo {
+        position: absolute;
+        z-index: 0;
+        top: 750px;
+    }
+
+    #logo-1st {
+        position: absolute;
+        z-index: 2;
+        /*background-color: red;*/
+        height: 100px;
+    }
+
+    #footer {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top: 2000px;
+    }
+
+    #logo {
+        width: 75%;
+    }
+
+    #logo-1st {
+        position: relative;
+        z-index: 2;
+        /*background-color: red;*/
+        height: 150px;
+    }
+
     .w-5 {
         width:5%;
     }
@@ -300,9 +405,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
 
 /*md*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    #position {
-        padding-top: 3.5rem;
-    }
 
     #corpo {
         position: absolute;
@@ -310,6 +412,23 @@ li:hover > ul.drop-menu li:nth-child(6) {
         z-index: 0;
     }
 
+    #logo-1st {
+        position: absolute;
+        z-index: 2;
+        /*background-color: red;*/
+        height: 100px;
+    }
+
+    #logo {
+        margin-left: 10rem;
+        width: 40%;
+    }
+
+    #body-resp {
+        position: relative;
+        top: 450px;
+    }
+
     #footer {
         position: absolute;
         z-index: 2;
@@ -317,13 +436,15 @@ li:hover > ul.drop-menu li:nth-child(6) {
         top: 2000px;
         height: 194.45px;
     }
+
+    #navigation {
+        margin-top: 7rem;
+    }
+
 }
 
 /*sm*/
 @media screen and (min-width: 300px) and (max-width: 767px) {
-    #position {
-        padding-top: 0rem;
-    }
 
     #corpo {
         position: absolute;
@@ -331,13 +452,41 @@ li:hover > ul.drop-menu li:nth-child(6) {
         z-index: 0;
     }
 
+    #navigation {
+        margin-top: 11rem;
+    }
+
+    #logo-1st {
+        position: absolute;
+        z-index: 2;
+        /*background-color: red;*/
+        height: 100px;
+    }
+
+    #body-resp {
+        position: relative;
+        top: 560px;
+    }
+
+    #logo {
+        width: 70%;
+    }
+
     #footer {
         position: absolute;
         z-index: 2;
         width: 100%;
         top: 2000px;
-        height: 194.45px;
+        height: 600px;
     }
+}
+
+#debora {
+    width: 90%;
+}
+
+#cabim {
+    width: 10%;
 }
 
 @font-face {
@@ -345,4 +494,4 @@ li:hover > ul.drop-menu li:nth-child(6) {
     src: url('./font/34460_SHAL____.ttf') format('truetype');;
 }
 
-/*.row > div { border:1px solid red;}*/
+/*.row > div { border:1px solid blue;}*/

@@ -9,17 +9,15 @@ import AddItem from './components/AddItem';
 import Footer from './components/Footer';
 import Auth from './components/Auth';
 import Laurea from './components/Laurea';
+import HomePageCorpo from "./components/HomePageCorpo";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <div>
-          <Header/>
-        </div>
-        <div>
           <Switch>
-            <Route path="/" exact component={HomePage}/>
+            <Route path="/" exact component={HomePageCorpo}/>
             <Route path="/areapersonale" exact render = {props => (<AddItem {...props}/>)}/>
             <Route path="/auth" component={Auth}/>
             <Route path="/laurea" component={Laurea}/>
