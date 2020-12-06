@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: 'shelley_allegro';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'shelley_allegro';
+}
+
+@font-face {
+  font-family: 'shelley_allegro';
+  src: local('shelley_allegro'), url('../src/font/34460_SHAL____.ttf') format('truetype');;
+}

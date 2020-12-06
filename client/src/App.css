@@ -1,0 +1,348 @@
+body {
+    font-family: 'shelley_allegro';
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    background-image: url("./img/texture.jpg");
+}
+
+#navigation {
+    background-image: url("./img/sfondo1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+
+.navbar-motto {
+    margin-bottom: 15rem;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+#myLinks ul li a {
+    text-decoration: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+
+#myLinks a:hover {
+    color: orange;
+    text-decoration: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+li {
+    float: left;
+    width: 23.62204724409449vh;
+    height: 10.236220472440944vh;
+    line-height: 10.236220472440944vh;
+    position: relative;
+    font-size: 3.204724409448819vh;
+}
+
+.nav-link {
+    color: brown;
+}
+
+ul.drop-menu {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    padding: 0;
+}
+
+.drop-menu li a {
+    cursor: pointer;
+}
+
+ul.drop-menu li a {
+    display: block;
+    color: white;
+    background-color: brown;
+    margin-top: 0.7em;
+}
+
+#facebook {
+    color:blue;
+}
+
+#facebook:hover {
+    color: #0D0E50;
+    transition: .2s ease-in;
+}
+
+#instagram {
+    color: #E72F2F;
+}
+
+#instagram:hover {
+    color:#850B0B;
+    transition: .2s ease-in;
+}
+
+#mail {
+    color: black;
+}
+
+#mail:hover {
+    color: brown;
+    text-decoration:none;
+    transition: .2s ease-in;
+}
+
+#phone {
+    color: black;
+}
+
+#phone:hover {
+    color: brown;
+    text-decoration:none;
+    transition: .2s ease-in;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100px;
+    border: 1px transparent;
+    perspective: 1000px;
+    animation: menu1 3s forwards;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: transparent;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: transparent;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+
+
+li:hover > ul.drop-menu li:nth-child(1) {
+    -webkit-animation-name: menu1;
+            animation-name: menu1;
+    -webkit-animation-duration: .5s;
+            animation-duration: .5s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+li:hover > ul.drop-menu li:nth-child(2) {
+    -webkit-animation-name: menu1;
+            animation-name: menu1;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+li:hover > ul.drop-menu li:nth-child(3) {
+    -webkit-animation-name: menu1;
+            animation-name: menu1;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+li:hover > ul.drop-menu li:nth-child(4) {
+    -webkit-animation-name: menu1;
+            animation-name: menu1;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+li:hover > ul.drop-menu li:nth-child(5) {
+    -webkit-animation-name: menu1;
+            animation-name: menu1;
+    -webkit-animation-duration: 2.5s;
+            animation-duration: 2.5s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+li:hover > ul.drop-menu li:nth-child(6) {
+    -webkit-animation-name: menu1;
+            animation-name: menu1;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@keyframes menu1 {
+    from {
+        opacity: 0;
+        transform: rotateY(-90deg); 
+        transform: rotateY(30px);
+    } to {
+        opacity: 1;
+        transform: rotateY(0deg);
+        transform: rotateY(0px);
+    }
+}
+
+.fa-plus-circle {
+    color: brown;
+}
+
+.mt-6 {
+    margin-top: 4rem;
+}
+
+#menu {
+    color: black;
+}
+
+@keyframes logo {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: logo 5s forwards;
+}
+
+.pb-6 {
+    padding-bottom: 6rem;
+}
+
+.pl-6 {
+    padding-left: 6rem;
+}
+
+#posLink {
+    color: brown;
+}
+
+#posLink:hover {
+    text-decoration: none;
+    color: black;
+    transition: .2s ease-in;
+}
+/*lg*/
+@media screen and (min-width: 992px) {
+    #position {
+        padding-top: 10rem;
+        font-size: 4vh;
+    }
+
+    #corpo {
+        position: absolute;
+        z-index: 0;
+        top: 750px;
+    }
+
+    #footer {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top: 2000px;
+    }
+
+    .w-5 {
+        width:5%;
+    }
+}
+
+/*md*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #position {
+        padding-top: 3.5rem;
+    }
+
+    #corpo {
+        position: absolute;
+        top: 600px;
+        z-index: 0;
+    }
+
+    #footer {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 2000px;
+        height: 194.45px;
+    }
+}
+
+/*sm*/
+@media screen and (min-width: 300px) and (max-width: 767px) {
+    #position {
+        padding-top: 0rem;
+    }
+
+    #corpo {
+        position: absolute;
+        top: 950px;
+        z-index: 0;
+    }
+
+    #footer {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 2000px;
+        height: 194.45px;
+    }
+}
+
+@font-face {
+    font-family: 'shelley_allegro';
+    src: url('./font/34460_SHAL____.ttf') format('truetype');;
+}
+
+/*.row > div { border:1px solid red;}*/
