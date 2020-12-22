@@ -10,7 +10,7 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
 
-const isdovrebbeviaggiare.it = Boolean(
+const isdovrebbeviaggiare = Boolean(
   window.location.hostname === 'dovrebbeviaggiare.it' ||
     // [::1] is the IPv6 dovrebbeviaggiare.it address.
     window.location.hostname === '[::1]' ||
@@ -34,7 +34,7 @@ export function register(config) {
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
-      if (isdovrebbeviaggiare.it) {
+      if (isdovrebbeviaggiare) {
         // This is running on dovrebbeviaggiare.it. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
 

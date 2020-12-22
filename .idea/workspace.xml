@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AddItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AddItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Laurea.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Laurea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/serviceWorker.js" afterDir="false" />
-    </list>
+    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Aggiunto indirizzo remoto" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,11 +46,34 @@
       <workItem from="1607276657014" duration="3829000" />
       <workItem from="1607634097023" duration="5000" />
       <workItem from="1608066154540" duration="11000" />
-      <workItem from="1608629574243" duration="405000" />
+      <workItem from="1608629574243" duration="826000" />
     </task>
+    <task id="LOCAL-00001" summary="Aggiunto indirizzo remoto">
+      <created>1608630026917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608630026917</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Aggiunto indirizzo remoto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto indirizzo remoto" />
   </component>
 </project>
