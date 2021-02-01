@@ -8,13 +8,13 @@ function Laurea() {
     const [loaded, setLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    var path="http://dovrebbeviaggiare.it:5000/";
+    var path="http://althea-bomboniere.it:5000/";
     useEffect(() => {
         fetchItems();
       },[]);
 
       const fetchItems = async () => {
-          await axios.get("http://dovrebbeviaggiare.it:5000/api/items/laurea")
+          await axios.get("http://althea-bomboniere.it:5000/api/items/laurea")
             .then(res => {
                 setItems(res.data);
                 console.log(res.data[0].productImage);

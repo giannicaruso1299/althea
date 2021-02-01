@@ -56,7 +56,7 @@ class AddItem extends Component {
         fd.append('description',this.state.descrizione);
         fd.append('productImage',this.state.selectedFile,this.state.selectedFile.name);
 
-        axios.post('http://dovrebbeviaggiare.it:5000/api/items',fd)
+        axios.post('http://althea-bomboniere.it:5000/api/items',fd)
             .then(res => {
                 console.log(res);
                 this.setState({

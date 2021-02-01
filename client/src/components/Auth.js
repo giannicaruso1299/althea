@@ -35,7 +35,7 @@ class Auth extends Component {
 
         console.log(body);
 
-        axios.post("http://dovrebbeviaggiare.it:5000/api/users/findUser", body)
+        axios.post("http://althea-bomboniere.it:5000/api/users/findUser", body)
             .then(res => {
                 if(res.data.length > 0) {
                     this.setState({
@@ -91,13 +91,3 @@ class Auth extends Component {
 }
 
 export default Auth;
-
-/*                            <Link to={{
-                                pathname: '/areapersonale',
-                                state: {
-                                    nomeUtente: this.state.nomeUtente,
-                                    password: this.state.password
-                                }
-                            }}>
-                                
-                            </Link>*/

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Link} from 'react-router-dom';
 
+
 function Header() {
 
     const [isShown2, setIsShown2] = useState(false);
@@ -14,6 +15,7 @@ function Header() {
     const toggleButton = (e) => {
         const i = e.target;
         const classes = i.classList;
+        console.log(classes);
         classes.forEach(classe => {
             if(classe === 'fa-plus-circle') {
                 i.classList.replace(classe,'fa-minus-circle');
@@ -22,42 +24,27 @@ function Header() {
             }
         });
         console.log(classes);
-        // const button = document.querySelector('')
+
+        function capitalize(string) {
+            let first_letter = string.charAt(0);
+            let uppercase = first_letter.toUpperCase();
+            let totalString = string.slice(1);
+            let computedString = uppercase + totalString;
+            return computedString;
+
+        }
     }
 
     return (
         <div>
             <div className="container-fluid">
                 <div className="row" id="logo-1st">
-                    <div className="col-xl-4 col-12">
-                        <a href="http://adsrl.com/2020_2021/AD_Catalogo_Collections_2020_21.pdf" target="_blank"><img src={require('../img/AD.png')} className="mt-xl-5 w-25 d-xl-inline d-none mx-xl-0 mx-3"></img></a>
-                        <a href="https://www.cuorematto.org/" target="_blank"><img src={require('../img/cuorematto.png')} className="mt-xl-5 w-25 mx-xl-0 mx-3 d-xl-inline d-none"></img></a>
-                        <a href="http://www.cabim.it/" target="_blank"><img src={require('../img/cabim.png')} className="mt-xl-5 mx-xl-0 mx-4 d-xl-inline d-none" id="cabim"></img></a>{/*<p className="lead font-weight-bold" id="position"><a href="https://goo.gl/maps/ynXyvTbm94ah4HA86" target="_blank" id="posLink">Via Bologna 94/A - 90047 Partinico (PA)</a></p>*/}
-                        <a href="http://www.rdmdesign.it/" target="_blank"><img src={require('../img/rdm.png')} className="mt-xl-5 ml-xl-3 ml-6 d-xl-inline d-none"></img></a>{/*<p className="lead font-weight-bold" id="position"><a href="https://goo.gl/maps/ynXyvTbm94ah4HA86" target="_blank" id="posLink">Via Bologna 94/A - 90047 Partinico (PA)</a></p>*/}
-                    </div>
-                    <div className="col-12 col-xl-4 ml-md-0 text-center">
-                        <Link to="/">
-                            <img src={require("../img/logo.png")} alt="logo" className="" id="logo"></img>
-                        </Link>
-                    </div>
                     <div className="col-4 d-none d-xl-block text-center pt-4">
-                        <div className="row">
-                            <div className="col-6">
-                                <a href="https://www.deboracarlucci.it/?gclid=CjwKCAiAn7L-BRBbEiwAl9UtkMGyySF6FsE_xeWRejxYTiXgGO6d_AWfjq8Xg8o9qtHDBYQnPFuC5xoCPtMQAvD_BwE" target="_blank"><img src={require('../img/deboracarlucci.png')} className="mt-4" id="debora"></img></a>
-                            </div>
-                            <div className="col-6">
-                                <h2>Seguici su</h2>
-                                <div className="row justify-content-center">
-                                    <a href="https://www.facebook.com/altheabomboniere" target="_blank"><i className="fab fa-facebook fa-2x mr-2" id="facebook"></i></a>
-                                    <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div className="row container-fluid" id="navigation">
                     <hr></hr>
-                    <div className="col-12 text-center">
+                    <div className="col-12 text-center mb-sm-0 mb-5 pb-sm-0 pb-5">
                         <h2 className="navbar-motto">La scelta migliore per le tue cerimonie</h2>
                     </div>
                     <nav className="navbar navbar-expand-xl bg-transparent" id="myLinks">
@@ -87,7 +74,11 @@ function Header() {
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown2 && (
                                                     list2.map(list => (
-                                                        <li><a>{list}</a></li>
+                                                        <li>
+                                                            <Link to="/laurea">
+                                                                <a>{list}</a>
+                                                            </Link>
+                                                        </li>
                                                     ))
                                                 )}
                                             </ul>
@@ -113,7 +104,11 @@ function Header() {
                                             <div className="collapse" id="collapseExample2">
                                                 <ul className="mt-0 dropdown-menu-sm-right d-block d-sm-none">
                                                     {list2.map(item => (
-                                                        <li><a>{item}</a></li>
+                                                        <li>
+                                                            <Link to="/laurea">
+                                                                <a>{item}</a>
+                                                            </Link>
+                                                        </li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -127,7 +122,11 @@ function Header() {
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown3 && (
                                                     list3.map(list => (
-                                                        <li><a>{list}</a></li>
+                                                        <li>
+                                                            <Link to="/laurea">
+                                                                <a>{list}</a>
+                                                            </Link>
+                                                        </li>
                                                     ))
                                                 )}
                                             </ul>
@@ -153,7 +152,11 @@ function Header() {
                                             <div className="collapse" id="collapseExample3">
                                                 <ul className=" bg-dark mt-0 dropdown-menu-sm-left d-block d-sm-none">
                                                     {list3.map(list => (
-                                                        <li><a>{list}</a></li>
+                                                        <li>
+                                                            <Link to="/laurea">
+                                                                <a>{list}</a>
+                                                            </Link>
+                                                        </li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -167,7 +170,11 @@ function Header() {
                                             <ul className="drop-menu menu-1 text-center dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown4 && (
                                                     list4.map(list => (
-                                                        <li><a>{list}</a></li>
+                                                        <li>
+                                                            <Link to="/laurea">
+                                                                <a>{list}</a>
+                                                            </Link>
+                                                        </li>
                                                     ))
                                                 )}
                                             </ul>
@@ -193,7 +200,11 @@ function Header() {
                                             <div className="collapse" id="collapseExample4">
                                                 <ul className=" bg-dark mt-0 dropdown-menu-sm-left d-block d-sm-none">
                                                     {list4.map(list => (
-                                                    <li><a>{list}</a></li>
+                                                        <li>
+                                                            <Link to="/laurea">
+                                                                <a>{list}</a>
+                                                            </Link>
+                                                        </li>
                                                     ))}
                                                 </ul>
                                             </div>

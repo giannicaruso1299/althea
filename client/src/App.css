@@ -7,6 +7,10 @@ body {
     /*background-image: url("./img/texture.jpg");*/
 }
 
+.seguicisu {
+    color: brown;
+}
+
 #navigation {
     background-image: url("./img/sfondo1.png");
     background-repeat: no-repeat;
@@ -15,16 +19,9 @@ body {
     z-index: 1;
 }
 
-
-.navbar-motto {
-    color: brown;
-    margin-top: 10rem;
-    font-weight: 700;
-    font-size: 50px;
-}
-
 #myLinks ul li a {
     text-decoration: none;
+    transition: .2s ease-in;
     transition: .2s ease-in;
     cursor: pointer;
 }
@@ -66,6 +63,7 @@ ul.drop-menu {
 .drop-menu li a {
     cursor: pointer;
 }
+
 
 ul.drop-menu li a {
     display: block;
@@ -306,6 +304,24 @@ height: auto;
         top: 750px;
     }
 
+    .navbar-motto {
+        color: brown;
+        margin-top: 10rem;
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    ul.drop-menu li a {
+        display: block;
+        color: white;
+        background-color: brown;
+        margin-top: 0.7em;
+    }
+
+    #items {
+        background-color: white;
+    }
+
     #laurea {
         position: relative;
         top: 450px;
@@ -323,6 +339,10 @@ height: auto;
         z-index: 2;
         /*background-color: red;*/
         height: 100px;
+    }
+
+    #myLinks ul li a {
+        color: white;
     }
 
     #body-resp {
@@ -355,8 +375,33 @@ height: auto;
         font-size: 4vh;
     }
 
+    /*.seguicisu {*/
+    /*    position: absolute;*/
+    /*    top: 55px;*/
+    /*    left: 900px;*/
+    /*}*/
+
+    .navbar-motto {
+        color: brown;
+        margin-top: 10rem;
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    ul.drop-menu li a {
+        display: block;
+        color: white;
+        background-color: brown;
+        margin-top: 0.7em;
+    }
+    }
+
     #section {
         height: auto;
+    }
+
+    #items {
+        color: white;
     }
 
     #laurea {
@@ -399,7 +444,8 @@ height: auto;
     }
 
     #logo {
-        width: 75%;
+        width: 65%;
+        margin-left: 80px;
     }
 
     #logo-1st {
@@ -412,7 +458,6 @@ height: auto;
     .w-5 {
         width:5%;
     }
-}
 
 /*md*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -421,6 +466,20 @@ height: auto;
         position: absolute;
         top: 600px;
         z-index: 0;
+    }
+
+    .navbar-motto {
+        color: brown;
+        margin-top: 10rem;
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    ul.drop-menu li a {
+        display: block;
+        color: white;
+        background-color: brown;
+        margin-top: 0.7em;
     }
 
     #laurea {
@@ -448,7 +507,7 @@ height: auto;
     #footer {
         position: absolute;
         z-index: 2;
-        width: 100%;
+        /*width: 100%;*/
         top: 2000px;
         height: 194.45px;
     }
@@ -468,13 +527,32 @@ height: auto;
         z-index: 0;
     }
 
+    .seguicisu {
+        position: absolute;
+        top: 450px;
+        left: 140px;
+        color: brown;
+    }
+
+    .navbar-motto {
+        color: brown;
+        margin-top: 10rem;
+        font-weight: 700;
+        font-size: 40px;
+    }
+
     #navigation {
         margin-top: 11rem;
     }
 
     #laurea {
         position: relative;
+        position: relative;
         top: 600px;
+    }
+
+    #myLinks ul li a {
+        color: black;
     }
 
     #logo-1st {
@@ -490,24 +568,40 @@ height: auto;
     }
 
     #logo {
-        width: 70%;
+        width: 60%;
+        margin-left: 80px;
+        margin-top: 60px;
     }
 
     #footer {
         position: absolute;
         z-index: 2;
-        width: 100%;
-        top: 2000px;
+        /*width: 100%;*/
+        top: 1000px;
         height: 600px;
     }
+
+    .g-maps {
+        width: 30%;
+    }
+
 }
 
 #debora {
-    width: 90%;
+    width: 40%;
+}
+.g-maps {
+    width: 60%;
 }
 
 #cabim {
     width: 10%;
+}
+
+.laminiera {
+    width: 40%;
+    margin-top: 1.1rem;
+    margin-left: 1.1rem;
 }
 
 @font-face {

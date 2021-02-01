@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Aggiunto indirizzo remoto" />
+    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Aggiunto indirizzo remoto">
+      <change afterPath="$PROJECT_DIR$/client/src/components/Affiliati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AddItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AddItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Laurea.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Laurea.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-prova" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -46,7 +58,18 @@
       <workItem from="1607276657014" duration="3829000" />
       <workItem from="1607634097023" duration="5000" />
       <workItem from="1608066154540" duration="11000" />
-      <workItem from="1608629574243" duration="826000" />
+      <workItem from="1608629574243" duration="2279000" />
+      <workItem from="1609062025903" duration="639000" />
+      <workItem from="1609062723959" duration="1420000" />
+      <workItem from="1609415260199" duration="15000" />
+      <workItem from="1609415460554" duration="167000" />
+      <workItem from="1610827926033" duration="599000" />
+      <workItem from="1610899043299" duration="33000" />
+      <workItem from="1611748089111" duration="4000" />
+      <workItem from="1612123974591" duration="383000" />
+      <workItem from="1612125478593" duration="5254000" />
+      <workItem from="1612130752728" duration="2928000" />
+      <workItem from="1612181310012" duration="167000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunto indirizzo remoto">
       <created>1608630026917</created>
@@ -55,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608630026917</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Aggiunto indirizzo remoto">
+      <created>1608630467991</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608630467991</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,6 +101,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Aggiunto indirizzo remoto" />
