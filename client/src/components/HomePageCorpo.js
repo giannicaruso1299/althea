@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from "./Header";
 import Affiliati from "./Affiliati";
+import Footer from "./Footer";
 
 function HomePageCorpo() {
     return (
-        <div>
+        <div className="container-fluid">
             <Affiliati/>
             <Header/>
             {/*xl*/}
@@ -18,13 +19,16 @@ function HomePageCorpo() {
             {/*        </div>*/}
             {/*    </div>*/}
             {/*</div>*/}
-            {/*/!*da sm a xl*!/*/}
+            {/*da sm a xl*/}
             {/*<div className="container mt-3 d-xl-none d-block" id="body-resp">*/}
             {/*    <div className="row">*/}
             {/*        <div className="col-12" id="section">*/}
             {/*            <img src={require('../img/confetti.jpg')} className="image"></img>*/}
             {/*        </div>*/}
             {/*    </div>*/}
+            {/*</div>*/}
+            {/*<div className="container-fluid position-relative">*/}
+            {/*    <Footer/>*/}
             {/*</div>*/}
         </div>
     );

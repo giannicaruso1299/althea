@@ -22,9 +22,6 @@ function App() {
             <Route path="/laurea" component={Laurea}/>
           </Switch>
         </div>
-        <div id="footer">
-          <Footer/>
-        </div>
       </div>
     </Router>
   );
