@@ -37,9 +37,25 @@ function Header() {
 
     return (
         <div>
-            <div className="row" id="navigation">
-                <div className="col-12 text-center mt-5 pt-5 mb-sm-0 mb-5 pb-sm-0 pb-5">
+            <div className="row mt-1" id="navigation">
+                <div className="col-12 text-center mt-5 pt-5 mb-5 pb-0">
                     <h1 className="navbar-motto">La scelta migliore per le tue cerimonie</h1>
+                </div>
+                <div className="row m-1 w-100">
+                    <div className="col-6 d-lg-none d-block pt-4">
+                        <nav className="navbar navbar-expand-lg bg-transparent" id="myLinks">
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i className="fas fa-bars fa-2x" id="menu">&nbsp;</i>
+                            </button>
+                        </nav>
+                    </div>
+                    <div className="col-6 d-lg-none d-block float-right pr-3 pt-1">
+                        <h5 className="font-weight-bold float-right ml-md-5 mr-3">Seguici su</h5>
+                        <div className="row float-right ml-md-5 mx-2">
+                            <a href="https://www.facebook.com/altheabomboniere" target="_blank"><i className="fab fa-facebook fa-2x mr-2" id="facebook"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

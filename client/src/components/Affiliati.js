@@ -20,9 +20,9 @@ function Affiliati() {
                         <img src={require("../img/logo.png")} alt="Althea bomboniere" id="logo"/>
                     </Link>
                 </div>
-                <div className="col-xl-4 col-12 pt-xl-6 text-center seguicisu">
+                <div className="col-xl-4 col-12 pt-xl-6 d-none d-lg-block seguicisu">
                     <h2 className="font-weight-bold">Seguici su</h2>
-                    <div className="row justify-content-center">
+                    <div className="row text-center">
                         <a href="https://www.facebook.com/altheabomboniere" target="_blank"><i className="fab fa-facebook fa-2x mr-2" id="facebook"></i></a>
                         <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"></i></a>
                     </div>

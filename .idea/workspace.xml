@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Affiliati solo nella homePage e nelle pagine giuste">
+    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Ancora refactor responsive&#10;Pagina Header">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Affiliati.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Affiliati.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
       <workItem from="1612130752728" duration="2928000" />
       <workItem from="1612181310012" duration="1687000" />
       <workItem from="1612205098636" duration="599000" />
-      <workItem from="1612256795348" duration="8070000" />
+      <workItem from="1612256795348" duration="11147000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunto indirizzo remoto">
       <created>1608630026917</created>
@@ -104,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612257307341</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactor del layout per responsive">
+      <created>1612265669653</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612265669653</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +135,8 @@
     <MESSAGE value="Cambiato dominio di riferimento e aggiustato layout pagina" />
     <MESSAGE value="Aggiunte immagini" />
     <MESSAGE value="Affiliati solo nella homePage e nelle pagine giuste" />
-    <option name="LAST_COMMIT_MESSAGE" value="Affiliati solo nella homePage e nelle pagine giuste" />
+    <MESSAGE value="Refactor del layout per responsive" />
+    <MESSAGE value="Ancora refactor responsive&#10;Pagina Header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ancora refactor responsive&#10;Pagina Header" />
   </component>
 </project>
