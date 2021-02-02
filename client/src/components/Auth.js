@@ -58,7 +58,7 @@ class Auth extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container my-4">
                 <div className="row justify-content-center">
                     <h1 style={{fontFamily:"sans-serif"}}>Effettua il login prima di entrare nell'area privata</h1>
                 </div>

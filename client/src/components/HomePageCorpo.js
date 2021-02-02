@@ -5,6 +5,7 @@ import Affiliati from "./Affiliati";
 function HomePageCorpo() {
     return (
         <div>
+            <Affiliati/>
             <Header/>
             {/*xl*/}
             {/*<div className="container-fluid mt-3 d-none d-xl-block" id="body">*/}

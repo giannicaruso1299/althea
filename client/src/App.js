@@ -15,7 +15,6 @@ function App() {
     <Router>
       <div className="App">
         <div>
-          <Affiliati/>
           <Switch>
             <Route path="/" exact component={HomePageCorpo}/>
             <Route path="/areapersonale" exact render = {props => (<AddItem {...props}/>)}/>

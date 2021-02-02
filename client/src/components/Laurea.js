@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import Header from "./Header";
+import Affiliati from "./Affiliati";
 
 function Laurea() {
 
@@ -27,6 +28,7 @@ function Laurea() {
 
     return (
         <div>
+            <Affiliati/>
             <Header/>
             <div className="container" id="laurea">
                 <h1 className="text-center mt-3">Laurea</h1>
