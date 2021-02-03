@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 function HomePageCorpo() {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mb-5">
             <Affiliati/>
             <Header/>
             {/*xl*/}
