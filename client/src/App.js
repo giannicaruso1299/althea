@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import AddItem from './components/AddItem';
 import Footer from './components/Footer';
 import Auth from './components/Auth';
-import Laurea from './components/Laurea';
+import Event from './components/Event';
 import HomePageCorpo from "./components/HomePageCorpo";
 import Affiliati from "./components/Affiliati";
 
@@ -19,7 +19,7 @@ function App() {
             <Route path="/" exact component={HomePageCorpo}/>
             <Route path="/areapersonale" exact render = {props => (<AddItem {...props}/>)}/>
             <Route path="/auth" component={Auth}/>
-            <Route path="/laurea" component={Laurea}/>
+            <Route path="/:event" component={Event}/>
           </Switch>
         </div>
       </div>

@@ -71,7 +71,7 @@ ul.drop-menu {
 }
 
 
-ul.drop-menu li a {
+#nav-link-lg {
     display: block;
     color: white;
     background-color: brown;
@@ -116,47 +116,47 @@ ul.drop-menu li a {
 /*    transition: .2s ease-in;*/
 /*}*/
 
-/*.flip-card {*/
-/*    background-color: transparent;*/
-/*    width: 100%;*/
-/*    height: 200px;*/
-/*    border: 1px transparent;*/
-/*    perspective: 1000px;*/
-/*    animation: menu1 3s forwards;*/
-/*    border-radius: 2px;*/
-/*}*/
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    border: 1px transparent;
+    perspective: 1000px;
+    animation: menu1 3s forwards;
+    border-radius: 2px;
+}
 
-/*.flip-card-inner {*/
-/*    position: relative;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    text-align: center;*/
-/*    transition: transform 0.8s;*/
-/*    transform-style: preserve-3d;*/
-/*}*/
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
 
-/*.flip-card:hover .flip-card-inner {*/
-/*    transform: rotateY(180deg);*/
-/*  }*/
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 
-/*.flip-card-front, .flip-card-back {*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    -webkit-backface-visibility: hidden;*/
-/*    backface-visibility: hidden;*/
-/*}*/
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
 
-/*.flip-card-front {*/
-/*    background-color: transparent;*/
-/*    color: black;*/
-/*}*/
+.flip-card-front {
+    background-color: transparent;
+    color: black;
+}
 
-/*.flip-card-back {*/
-/*    background-color: transparent;*/
-/*    color: black;*/
-/*    transform: rotateY(180deg);*/
-/*}*/
+.flip-card-back {
+    background-color: transparent;
+    color: black;
+    transform: rotateY(180deg);
+}
 
 
 
@@ -383,6 +383,10 @@ li:hover > ul.drop-menu li:nth-child(6) {
 /*}*/
 /*xl*/
 @media screen and (min-width: 1024px) {
+
+    html {
+        min-height: 1000px;
+    }
 
     #logo {
         width: 60%;

@@ -95,7 +95,11 @@ router.post('/',upload.single('productImage'),(req,res) => {
         .then(item => {
             res.json(item);
             console.log(`Added element to database: ${item.name}`);
-        });
+        })
+        .catch(err => {
+            res.send(err);
+        })
+    ;
 });
 
 // @route   DELETE api/items

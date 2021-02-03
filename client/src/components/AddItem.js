@@ -15,57 +15,36 @@ class AddItem extends Component {
         modal:false,
         modalErr:false,
         allowed: setDefaultVal(this.props.location.state, false),
-        nomeOggetto:"",
-        evento:"",
-        descrizione:"",
         selectedFile:""
     };
 
     handleFile = (e) => {
-        console.log(e.target.files[0]);
         this.setState({
             selectedFile: e.target.files[0]
         });
     };
 
-    handleName = (e) => {
-        this.setState({
-            nomeOggetto:e.target.value
-        })
-    }
 
-    handleEvent = (e) => {
-        this.setState({
-            evento:e.target.value
-        })
-    }
-
-    handleDesc = (e) => {
-        this.setState({
-            descrizione:e.target.value
-        })
-    }
 
     fileUploadHandler = (e) => {
 
         e.preventDefault();
 
         const fd = new FormData();
-        fd.append('name',this.state.nomeOggetto);
-        fd.append('event',this.state.evento);
-        fd.append('description',this.state.descrizione);
+        fd.append('name',document.getElementById('nome').value);
+        fd.append('event',document.getElementById('evento').value);
+        fd.append('description',document.getElementById('description').value);
         fd.append('productImage',this.state.selectedFile,this.state.selectedFile.name);
 
         axios.post('http://althea-bomboniere.it:5000/api/items',fd)
             .then(res => {
-                console.log(res);
                 this.setState({
                     modal:true
                 });
             })
             .catch(err => {
                 console.log(err);
-            });
+        });
     };
 
     toggle = (e) => {

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Ancora refactor responsive&#10;Pagina Header">
+    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Refactor responsive dell'header con tutto il collapse pronto">
+      <change afterPath="$PROJECT_DIR$/client/src/components/Event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Affiliati.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Affiliati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AddItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AddItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/HomePageCorpo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/items.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +36,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-prova" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giann\Desktop\prova\client\src\components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,7 +74,8 @@
       <workItem from="1612181310012" duration="1687000" />
       <workItem from="1612205098636" duration="599000" />
       <workItem from="1612256795348" duration="11783000" />
-      <workItem from="1612269840902" duration="10580000" />
+      <workItem from="1612269840902" duration="10977000" />
+      <workItem from="1612349643748" duration="4696000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunto indirizzo remoto">
       <created>1608630026917</created>
@@ -118,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612269203625</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor responsive dell'header con tutto il collapse pronto">
+      <created>1612314215475</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612314215475</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +161,7 @@
     <MESSAGE value="Affiliati solo nella homePage e nelle pagine giuste" />
     <MESSAGE value="Refactor del layout per responsive" />
     <MESSAGE value="Ancora refactor responsive&#10;Pagina Header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ancora refactor responsive&#10;Pagina Header" />
+    <MESSAGE value="Refactor responsive dell'header con tutto il collapse pronto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor responsive dell'header con tutto il collapse pronto" />
   </component>
 </project>

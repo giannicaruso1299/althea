@@ -26,6 +26,27 @@ function Header() {
         console.log(classes);
     }
 
+    const createPath = (e) => {
+        e.preventDefault();
+        const html = e.target;
+        const path = "/" + html.innerHTML.toLowerCase();
+        window.location.href = path;
+    }
+
+    const createPathConfettate = (e) => {
+        e.preventDefault();
+        const html = e.target;
+        const path = "/confettate/" + html.innerHTML.toLowerCase();
+        window.location.href = path;
+    }
+
+    const createPathConfetti = (e) => {
+        e.preventDefault();
+        const html = e.target;
+        const path = "/confetti/" + html.innerHTML.toLowerCase();
+        window.location.href = path;
+    }
+
     return (
         <div>
             <div className="row mt-1" id="navigation">
@@ -42,23 +63,21 @@ function Header() {
                                             <a className="nav-link" href="/">Home</a>
                                         </li>
                                     </div>
-                                    <div className="col-3">
+                                    <div className="col-2">
                                         <li className="nav-item lista" onMouseEnter={()=>setIsShown2(true)} onMouseLeave = {()=>setIsShown2(false)}>
                                             <a className="nav-link" href="#">Eventi</a>
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown2 && (
                                                     list2.map(list => (
                                                         <li>
-                                                            <Link to="/laurea">
-                                                                <a>{list}</a>
-                                                            </Link>
+                                                            <a onClick={createPath} id="nav-link-lg">{list}</a>
                                                         </li>
                                                     ))
                                                 )}
                                             </ul>
                                         </li>
                                     </div>
-                                    <div className="col-3">
+                                    <div className="col-2">
                                         <li className="nav-item d-sm-block d-none" onMouseEnter={()=>setIsShown3(true)} onMouseLeave = {()=>setIsShown3(false)}>
                                             <a className="nav-link" href="#">Confettate</a>
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
@@ -66,7 +85,7 @@ function Header() {
                                                     list3.map(list => (
                                                         <li>
                                                             <Link to="/laurea">
-                                                                <a>{list}</a>
+                                                                <a onClick={createPathConfettate} id="nav-link-lg">{list}</a>
                                                             </Link>
                                                         </li>
                                                     ))
@@ -74,7 +93,7 @@ function Header() {
                                             </ul>
                                         </li>
                                     </div>
-                                    <div className="col-md-3 col-sm-6">
+                                    <div className="col-md-2 col-sm-6">
                                         <li className="nav-item d-sm-block d-none" onMouseEnter={()=>setIsShown4(true)} onMouseLeave = {()=>setIsShown4(false)}>
                                             <a className="nav-link" href="#">Confetti</a>
                                             <ul className="drop-menu menu-1 text-center dropdown-menu-sm-left d-sm-block d-none">
@@ -82,12 +101,17 @@ function Header() {
                                                     list4.map(list => (
                                                         <li>
                                                             <Link to="/laurea">
-                                                                <a>{list}</a>
+                                                                <a onClick={createPathConfetti} id="nav-link-lg">{list}</a>
                                                             </Link>
                                                         </li>
                                                     ))
                                                 )}
                                             </ul>
+                                        </li>
+                                    </div>
+                                    <div className="col-md-2 col-sm-6">
+                                        <li className="nav-item d-sm-block d-none">
+                                            <a className="nav-link" href="#">Portaciuccio</a>
                                         </li>
                                     </div>
                                 </div>
@@ -137,9 +161,7 @@ function Header() {
                                         <ul className="mt-0 dropdown-menu-sm-right d-block d-lg-none">
                                             {list2.map(item => (
                                                 <li>
-                                                    <Link to="/laurea">
-                                                        <a className="nav-link-resp">{item}</a>
-                                                    </Link>
+                                                    <a onClick={createPath} className="nav-link-resp">{item}</a>
                                                 </li>
                                             ))}
                                         </ul>
@@ -164,9 +186,7 @@ function Header() {
                                         <ul className="mt-0 dropdown-menu-sm-right d-block d-lg-none">
                                             {list3.map(item => (
                                                 <li>
-                                                    <Link to="/laurea">
-                                                        <a className="nav-link-resp">{item}</a>
-                                                    </Link>
+                                                    <a onClick={createPathConfettate} className="nav-link-resp">{item}</a>
                                                 </li>
                                             ))}
                                         </ul>
@@ -191,12 +211,17 @@ function Header() {
                                         <ul className="mt-0 dropdown-menu-sm-right d-block d-lg-none">
                                             {list4.map(item => (
                                                 <li>
-                                                    <Link to="/laurea">
-                                                        <a className="nav-link-resp">{item}</a>
-                                                    </Link>
+                                                    <a onClick={createPathConfetti} className="nav-link-resp">{item}</a>
                                                 </li>
                                             ))}
                                         </ul>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-12">
+                                        <li className="nav-item">
+                                            <a className="nav-link ml-3" href="/">Portaciuccio</a>
+                                        </li>
                                     </div>
                                 </div>
                             </div>
