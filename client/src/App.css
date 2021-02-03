@@ -12,6 +12,11 @@ html, body {
     color: black;
 }
 
+.nav-link-resp:hover {
+    text-decoration: none;
+    color: orange;
+}
+
 .navbar-motto {
     color: brown;
     font-weight: 700;

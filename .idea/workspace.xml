@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Refactor responsive dell'header con tutto il collapse pronto">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="78d2ab05-7f01-4696-8975-f62625399017" name="Default Changelist" comment="Aggiunti path dinamici per i vari eventi e aggiunto campo &quot;portaciuccio&quot; nella navbar">
       <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AddItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AddItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/items.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +69,7 @@
       <workItem from="1612205098636" duration="599000" />
       <workItem from="1612256795348" duration="11783000" />
       <workItem from="1612269840902" duration="10977000" />
-      <workItem from="1612349643748" duration="4696000" />
+      <workItem from="1612349643748" duration="5008000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunto indirizzo remoto">
       <created>1608630026917</created>
@@ -133,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612314215475</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Aggiunti path dinamici per i vari eventi e aggiunto campo &quot;portaciuccio&quot; nella navbar">
+      <created>1612354926367</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612354926367</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +163,7 @@
     <MESSAGE value="Refactor del layout per responsive" />
     <MESSAGE value="Ancora refactor responsive&#10;Pagina Header" />
     <MESSAGE value="Refactor responsive dell'header con tutto il collapse pronto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor responsive dell'header con tutto il collapse pronto" />
+    <MESSAGE value="Aggiunti path dinamici per i vari eventi e aggiunto campo &quot;portaciuccio&quot; nella navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti path dinamici per i vari eventi e aggiunto campo &quot;portaciuccio&quot; nella navbar" />
   </component>
 </project>
