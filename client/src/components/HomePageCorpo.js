@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header";
 import Affiliati from "./Affiliati";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 function HomePageCorpo() {
     return (

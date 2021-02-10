@@ -9,10 +9,10 @@ function Event(event) {
     const [loaded, setLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    var path="http://althea-bomboniere.it:5000/";
+    let path="http://althea-bomboniere.it:5000/";
     useEffect(() => {
         fetchItems();
-      },[]);
+      });
 
     const myPath = event.location.pathname.slice(1);
 
@@ -29,9 +29,9 @@ function Event(event) {
 
     return (
         <div>
-            <Affiliati/>
-            <Header/>
-            <div className="container" id="laurea">
+            <div className="container-fluid" id="laurea">
+                <Affiliati/>
+                <Header/>
                 <h1 className="text-center mt-3 text-capitalize">{myPath}</h1>
                 {(!loaded) && (
                     <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80} />
@@ -42,7 +42,7 @@ function Event(event) {
                             <div className="flip-card">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
-                                        <img src={path+item.productImage} alt={item.name} style={{width:"100%",height:"100%"}}></img>
+                                        <img src={path + item.productImage} alt={item.name} style={{width: "100%", height: "100%"}}/>
                                     </div>
                                     <div className="flip-card-back">
                                         <h2>{item.name}</h2>

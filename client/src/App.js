@@ -4,11 +4,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import AddItem from './components/AddItem';
-import Footer from './components/Footer';
 import Auth from './components/Auth';
 import Event from './components/Event';
 import HomePageCorpo from "./components/HomePageCorpo";
-import Affiliati from "./components/Affiliati";
+import Confettate from "./components/Confettate";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,9 +19,11 @@ function App() {
             <Route path="/" exact component={HomePageCorpo}/>
             <Route path="/areapersonale" exact render = {props => (<AddItem {...props}/>)}/>
             <Route path="/auth" component={Auth}/>
-            <Route path="/:event" component={Event}/>
+            <Route path="/:event" exact component={Event}/>
+            <Route path="/confettate/:event" exact component={Confettate} />
           </Switch>
         </div>
+        <Footer/>
       </div>
     </Router>
   );

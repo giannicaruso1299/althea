@@ -1,11 +1,16 @@
 html, body {
-    font-family: 'shelley_allegro';
+    font-family: 'shelley_allegro', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
 }
 
 .seguicisu {
     color: brown;
+}
+
+#myFooter {
+    background-color: #eee;
+    /*margin-top: 900px;*/
 }
 
 .nav-link-resp {
@@ -29,13 +34,6 @@ html, body {
     background-size: cover;
 }
 
-#myLinks ul li a {
-    text-decoration: none;
-    transition: .2s ease-in;
-    transition: .2s ease-in;
-    cursor: pointer;
-}
-
 
 #myLinks a:hover {
     color: orange;
@@ -50,7 +48,6 @@ ul {
 }
 
 li {
-    /*float: left;*/
     width: 23.62204724409449vh;
     height: 10.236220472440944vh;
     line-height: 10.236220472440944vh;
@@ -66,7 +63,7 @@ li {
 ul.drop-menu {
     position: absolute;
     top: 100%;
-    left: 0%;
+    left: 0;
     width: 100%;
     padding: 0;
 }
@@ -81,6 +78,16 @@ ul.drop-menu {
     color: white;
     background-color: brown;
     margin-top: 0.7em;
+    cursor: pointer;
+    border-color: transparent;
+    text-decoration: none;
+    transition: .2s ease-in;
+    height: 98.5%;
+}
+
+#nav-link-lg:hover {
+    color: orange;
+    text-decoration: none;
 }
 
 #facebook {
@@ -101,25 +108,25 @@ ul.drop-menu {
     transition: .2s ease-in;
 }
 
-/*#mail {*/
-/*    color: black;*/
-/*}*/
+#mail {
+    color: black;
+}
 
-/*#mail:hover {*/
-/*    color: brown;*/
-/*    text-decoration:none;*/
-/*    transition: .2s ease-in;*/
-/*}*/
+#mail:hover {
+    color: brown;
+    text-decoration:none;
+    transition: .2s ease-in;
+}
 
-/*#phone {*/
-/*    color: black;*/
-/*}*/
+#phone {
+    color: black;
+}
 
-/*#phone:hover {*/
-/*    color: brown;*/
-/*    text-decoration:none;*/
-/*    transition: .2s ease-in;*/
-/*}*/
+#phone:hover {
+    color: brown;
+    text-decoration:none;
+    transition: .2s ease-in;
+}
 
 .flip-card {
     background-color: transparent;
@@ -235,11 +242,9 @@ li:hover > ul.drop-menu li:nth-child(6) {
     from {
         opacity: 0;
         transform: rotateY(-90deg);
-        transform: rotateY(30px);
     } to {
         opacity: 1;
         transform: rotateY(0deg);
-        transform: rotateY(0px);
     }
 }
 
@@ -341,11 +346,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
 /*        background-color: white;*/
 /*    }*/
 
-/*    #laurea {*/
-/*        position: relative;*/
-/*        top: 450px;*/
-/*    }*/
-
 /*    #footer {*/
 /*        position: absolute;*/
 /*        z-index: 0;*/
@@ -444,10 +444,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
 /*        color: white;*/
 /*    }*/
 
-/*    #laurea {*/
-/*        position: relative;*/
-/*        top: 320px;*/
-/*    }*/
 
 /*    #sidebar {*/
 /*        height: 350px;*/
@@ -524,11 +520,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
 /*        margin-top: 0.7em;*/
 /*    }*/
 
-/*    #laurea {*/
-/*        position: relative;*/
-/*        top: 450px;*/
-/*    }*/
-
 /*    #logo-1st {*/
 /*        position: absolute;*/
 /*        z-index: 2;*/
@@ -595,12 +586,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
 /*        margin-top: 11rem;*/
 /*    }*/
 
-/*    #laurea {*/
-/*        position: relative;*/
-/*        position: relative;*/
-/*        top: 600px;*/
-/*    }*/
-
     #myLinks ul li a {
         color: black;
     }
@@ -631,18 +616,18 @@ li:hover > ul.drop-menu li:nth-child(6) {
 /*        height: 600px;*/
 /*    }*/
 
-/*    .g-maps {*/
-/*        width: 30%;*/
-/*    }*/
+    .g-maps {
+        width: 30%;
+    }
 
 }
 
 #debora {
     width: 40%;
 }
-/*.g-maps {*/
-/*    width: 60%;*/
-/*}*/
+.g-maps {
+    width: 60%;
+}
 
 #cabim {
     width: 10%;

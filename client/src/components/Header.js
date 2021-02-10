@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {Link} from 'react-router-dom';
 
 
 function Header() {
@@ -29,22 +28,19 @@ function Header() {
     const createPath = (e) => {
         e.preventDefault();
         const html = e.target;
-        const path = "/" + html.innerHTML.toLowerCase();
-        window.location.href = path;
+        window.location.href = "/" + html.innerHTML.toLowerCase();
     }
 
     const createPathConfettate = (e) => {
         e.preventDefault();
         const html = e.target;
-        const path = "/confettate/" + html.innerHTML.toLowerCase();
-        window.location.href = path;
+        window.location.href = "/confettate/" + html.innerHTML.toLowerCase();
     }
 
     const createPathConfetti = (e) => {
         e.preventDefault();
         const html = e.target;
-        const path = "/confetti/" + html.innerHTML.toLowerCase();
-        window.location.href = path;
+        window.location.href = "/confetti/" + html.innerHTML.toLowerCase();
     }
 
     return (
@@ -65,12 +61,12 @@ function Header() {
                                     </div>
                                     <div className="col-2">
                                         <li className="nav-item lista" onMouseEnter={()=>setIsShown2(true)} onMouseLeave = {()=>setIsShown2(false)}>
-                                            <a className="nav-link" href="#">Eventi</a>
+                                            <a className="nav-link h-50" href="/">Eventi</a>
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown2 && (
                                                     list2.map(list => (
-                                                        <li>
-                                                            <a onClick={createPath} id="nav-link-lg">{list}</a>
+                                                        <li key={list}>
+                                                            <button className="btn-link font-weight-bold w-100" onClick={createPath} id="nav-link-lg">{list}</button>
                                                         </li>
                                                     ))
                                                 )}
@@ -79,14 +75,12 @@ function Header() {
                                     </div>
                                     <div className="col-2">
                                         <li className="nav-item d-sm-block d-none" onMouseEnter={()=>setIsShown3(true)} onMouseLeave = {()=>setIsShown3(false)}>
-                                            <a className="nav-link" href="#">Confettate</a>
+                                            <a className="nav-link" href="/">Confettate</a>
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown3 && (
                                                     list3.map(list => (
-                                                        <li>
-                                                            <Link to="/laurea">
-                                                                <a onClick={createPathConfettate} id="nav-link-lg">{list}</a>
-                                                            </Link>
+                                                        <li key={list}>
+                                                            <button className="btn-link font-weight-bold w-100" onClick={createPathConfettate} id="nav-link-lg">{list}</button>
                                                         </li>
                                                     ))
                                                 )}
@@ -95,14 +89,12 @@ function Header() {
                                     </div>
                                     <div className="col-md-2 col-sm-6">
                                         <li className="nav-item d-sm-block d-none" onMouseEnter={()=>setIsShown4(true)} onMouseLeave = {()=>setIsShown4(false)}>
-                                            <a className="nav-link" href="#">Confetti</a>
+                                            <a className="nav-link" href="/">Confetti</a>
                                             <ul className="drop-menu menu-1 text-center dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown4 && (
                                                     list4.map(list => (
-                                                        <li>
-                                                            <Link to="/laurea">
-                                                                <a onClick={createPathConfetti} id="nav-link-lg">{list}</a>
-                                                            </Link>
+                                                        <li key={list}>
+                                                            <button className="btn-link font-weight-bold w-100" onClick={createPathConfetti} id="nav-link-lg">{list}</button>
                                                         </li>
                                                     ))
                                                 )}
@@ -111,7 +103,7 @@ function Header() {
                                     </div>
                                     <div className="col-md-2 col-sm-6">
                                         <li className="nav-item d-sm-block d-none">
-                                            <a className="nav-link" href="#">Portaciuccio</a>
+                                            <a className="nav-link" href="/">Portaciuccio</a>
                                         </li>
                                     </div>
                                 </div>
@@ -130,8 +122,8 @@ function Header() {
                             <h5 className="font-weight-bold float-right ml-md-5 mr-3">Seguici su</h5>
                         </div>
                         <div className="row float-right ml-md-5 mx-2">
-                            <a href="https://www.facebook.com/altheabomboniere" target="_blank"><i className="fab fa-facebook fa-2x mr-2" id="facebook"></i></a>
-                            <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"></i></a>
+                            <a href="https://www.facebook.com/altheabomboniere" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook fa-2x mr-2" id="facebook"/></a>
+                            <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"/></a>
                         </div>
                     </div>
                     <div className="container-fluid collapse navbar-collapse d-lg-none" id="collapseContainer">
@@ -146,13 +138,13 @@ function Header() {
                             <div className="row">
                                 <div className="col-6">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Eventi</a>
+                                        <a className="nav-link" href="/">Eventi</a>
                                     </li>
                                 </div>
                                 <div className="col-6">
                                     <span onClick={toggleButton}>
                                         <a className="d-lg-none d-block" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"></i>
+                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"/>
                                         </a>
                                     </span>
                                 </div>
@@ -160,8 +152,8 @@ function Header() {
                                     <div className="collapse" id="collapseExample2">
                                         <ul className="mt-0 dropdown-menu-sm-right d-block d-lg-none">
                                             {list2.map(item => (
-                                                <li>
-                                                    <a onClick={createPath} className="nav-link-resp">{item}</a>
+                                                <li key={item}>
+                                                    <button className="btn-link nav-link-resp bg-transparent border-0 font-weight-bold" onClick={createPath}>{item}</button>
                                                 </li>
                                             ))}
                                         </ul>
@@ -171,13 +163,13 @@ function Header() {
                             <div className="row">
                                 <div className="col-6">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Confettate</a>
+                                        <a className="nav-link" href="/">Confettate</a>
                                     </li>
                                 </div>
                                 <div className="col-6">
                                     <span onClick={toggleButton}>
                                         <a className="d-lg-none d-block" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"></i>
+                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"/>
                                         </a>
                                     </span>
                                 </div>
@@ -185,8 +177,8 @@ function Header() {
                                     <div className="collapse" id="collapseExample3">
                                         <ul className="mt-0 dropdown-menu-sm-right d-block d-lg-none">
                                             {list3.map(item => (
-                                                <li>
-                                                    <a onClick={createPathConfettate} className="nav-link-resp">{item}</a>
+                                                <li key={item}>
+                                                    <button className="btn-link nav-link-resp bg-transparent border-0 font-weight-bold" onClick={createPathConfettate}>{item}</button>
                                                 </li>
                                             ))}
                                         </ul>
@@ -196,13 +188,13 @@ function Header() {
                             <div className="row">
                                 <div className="col-6">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Confetti</a>
+                                        <a className="nav-link" href="/">Confetti</a>
                                     </li>
                                 </div>
                                 <div className="col-6">
                                     <span onClick={toggleButton}>
                                         <a className="d-lg-none d-block" data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
-                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"></i>
+                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"/>
                                         </a>
                                     </span>
                                 </div>
@@ -210,8 +202,8 @@ function Header() {
                                     <div className="collapse" id="collapseExample4">
                                         <ul className="mt-0 dropdown-menu-sm-right d-block d-lg-none">
                                             {list4.map(item => (
-                                                <li>
-                                                    <a onClick={createPathConfetti} className="nav-link-resp">{item}</a>
+                                                <li key={item}>
+                                                    <button className="btn-link nav-link-resp bg-transparent border-0 font-weight-bold" onClick={createPathConfetti}>{item}</button>
                                                 </li>
                                             ))}
                                         </ul>

@@ -117,4 +117,12 @@ router.delete('/:id', (req, res) => {
         });
 });
 
+router.delete('/',(req,res) => {
+    Item.deleteMany().then(() => {
+        res.status(200).send("Ok");
+    }).catch(err => {
+        res.status(400).send(err);
+    })
+})
+
 module.exports = router;
