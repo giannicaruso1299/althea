@@ -129,22 +129,22 @@ function Header() {
                     <div className="container-fluid collapse navbar-collapse d-lg-none" id="collapseContainer">
                         <ul className="navbar-nav mr-auto">
                             <div className="row">
-                                <div className="col-12">
+                                <div className="col-12 d-flex align-items-center">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/">Home</a>
+                                        <a className="nav-link p-0" href="/">Home</a>
                                     </li>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-6 d-flex align-items-center">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/">Eventi</a>
+                                        <a className="nav-link p-0" href="/">Eventi</a>
                                     </li>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-6 d-flex align-items-center justify-content-end">
                                     <span onClick={toggleButton}>
                                         <a className="d-lg-none d-block" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"/>
+                                            <i className="fas fa-plus-circle d-lg-none d-block float-right"/>
                                         </a>
                                     </span>
                                 </div>
@@ -161,15 +161,15 @@ function Header() {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-6 d-flex align-items-center">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/">Confettate</a>
+                                        <a className="nav-link p-0" href="/">Confettate</a>
                                     </li>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-6 d-flex align-items-center justify-content-end">
                                     <span onClick={toggleButton}>
                                         <a className="d-lg-none d-block" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"/>
+                                            <i className="fas fa-plus-circle d-lg-none d-block float-right"/>
                                         </a>
                                     </span>
                                 </div>
@@ -186,15 +186,15 @@ function Header() {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-6 d-flex align-items-center">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/">Confetti</a>
+                                        <a className="nav-link p-0" href="/">Confetti</a>
                                     </li>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-6 d-flex align-items-center justify-content-end">
                                     <span onClick={toggleButton}>
                                         <a className="d-lg-none d-block" data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
-                                            <i className="fas fa-plus-circle d-lg-none d-block float-right pt-4 mt-2"/>
+                                            <i className="fas fa-plus-circle d-lg-none d-block float-right"/>
                                         </a>
                                     </span>
                                 </div>
@@ -209,15 +209,13 @@ function Header() {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="row">
-                                    <div className="col-12">
-                                        <li className="nav-item">
-                                            <a className="nav-link ml-3" href="/">Portaciuccio</a>
-                                        </li>
-                                    </div>
-                                </div>
                             </div>
                         </ul>
+                        <div className="row">
+                            <div className="col-12 d-flex align-items-center justify-content-start">
+                                <a className="nav-link pl-0" href="/">Portaciuccio</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

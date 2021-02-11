@@ -13,3 +13,8 @@ code {
   font-family: 'shelley_allegro';
   src: local('shelley_allegro'), url('../src/font/34460_SHAL____.ttf') format('truetype');;
 }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: local('Source Sans Pro'), url('../src/font/SourceSansPro-SemiBold.ttf') format('truetype');
+}
