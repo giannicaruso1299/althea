@@ -8,52 +8,52 @@ function HomePageCorpo() {
         <div className="container-fluid mb-5">
             <Affiliati/>
             <Header/>
+            <h3 className="mb-3 mt-3 text-center">Testo prima parte homepage</h3>
             <div className="row mt-3 justify-content-center mx-1">
-                <h3 className="mb-3">Testo prima parte homepage</h3>
                 <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/1.png')} alt="First slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/1.jpg')} alt="First slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/2.png')} alt="Second slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/2.jpg')} alt="Second slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/3.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/3.jpg')} alt="Third slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/4.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/4.jpg')} alt="Third slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/5.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/5.jpg')} alt="Third slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/6.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/6.jpg')} alt="Third slide"/>
                         </div>
                     </div>
                 </div>
             </div>
+            <h3 className="mb-3 text-center">Testo seconda parte homepage</h3>
             <div className="row mt-3 justify-content-center mx-1">
-                <h3 className="mb-3">Testo seconda parte homepage</h3>
                 <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/7.png')} alt="First slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/7.jpg')} alt="First slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/8.png')} alt="Second slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/8.jpg')} alt="Second slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/9.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/9.jpg')} alt="Third slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/10.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/10.jpg')} alt="Third slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/11.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/11.jpg')} alt="Third slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('../img/foto_homepage/12.png')} alt="Third slide"/>
+                            <img className="d-block img-fluid" src={require('../img/foto_homepage/12.jpg')} alt="Third slide"/>
                         </div>
                     </div>
                 </div>
