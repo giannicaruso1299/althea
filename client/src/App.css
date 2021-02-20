@@ -174,7 +174,11 @@ ul.drop-menu {
     transform: rotateY(180deg);
 }
 
-
+.carousel-item {
+    border: 1px solid red;
+    max-height: 250px;
+    min-width: 1vw;
+}
 
 li:hover > ul.drop-menu li:nth-child(1) {
     -webkit-animation-name: menu1;
