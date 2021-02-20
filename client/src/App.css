@@ -175,9 +175,10 @@ ul.drop-menu {
 }
 
 .carousel-item {
-    border: 1px solid red;
-    max-height: 250px;
-    min-width: 1vw;
+    min-width: 333.41px;
+    max-width: 333.41px;
+    min-height: 245px;
+    max-height: 245px;
 }
 
 li:hover > ul.drop-menu li:nth-child(1) {
