@@ -17,6 +17,11 @@ html, body {
     font-family: 'shelley_allegro', sans-serif;
 }
 
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0;
+}
+
 .nav-link-resp {
     color: black !important;
     border: none;

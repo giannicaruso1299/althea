@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header";
 import Affiliati from "./Affiliati";
-// import EventsCarousel from "./EventsCarousel";
+import EventsCarousel from "./EventsCarousel";
 // import Footer from "./Footer";
 
 function HomePageCorpo() {
@@ -13,7 +13,7 @@ function HomePageCorpo() {
         <div className="container-fluid mb-5">
             <Affiliati/>
             <Header/>
-            {/*<EventsCarousel/>*/}
+            <EventsCarousel/>
             {/**lg only**/}
             <div className="d-sm-block d-none">
                 <div className="row mt-3 justify-content-center" id="carousel-container">
