@@ -1,8 +1,6 @@
 import React from 'react';
-import './index.css';
+import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
 import AddItem from './components/AddItem';
 import Auth from './components/Auth';
 import Event from './components/Event';

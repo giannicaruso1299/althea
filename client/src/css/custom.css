@@ -8,7 +8,7 @@
   }
   
   body {
-    font-family: 'shelley_allegro';
+    font-family: 'shelley_allegro' !important;
     font-weight: 700;
   }
   

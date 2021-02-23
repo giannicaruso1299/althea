@@ -112,7 +112,7 @@ function Header() {
                     </div>
                     <div className="col-6 d-lg-none d-block pt-4">
                         <nav className="navbar navbar-expand-lg bg-transparent" id="myLinks">
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" href="#collapseContainer" aria-controls="collapseContainer" aria-expanded="false" aria-label="Toggle navigation">
+                            <button className="navbar-toggler" id="toggler-button" type="button" data-toggle="collapse" href="#collapseContainer" aria-controls="collapseContainer" aria-expanded="false" aria-label="Toggle navigation">
                                 <i className="fas fa-bars fa-2x" id="menu">&nbsp;</i>
                             </button>
                         </nav>
@@ -213,7 +213,7 @@ function Header() {
                         </ul>
                         <div className="row">
                             <div className="col-12 d-flex align-items-center justify-content-start">
-                                <a className="nav-link pl-0" href="/">Portaciuccio</a>
+                                <a className="nav-link pl-0" href="/" style={{fontSize: "3.204724409448819vh"}}>Portaciuccio</a>
                             </div>
                         </div>
                     </div>
