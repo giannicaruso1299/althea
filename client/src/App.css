@@ -19,7 +19,7 @@ html, body {
 
 .navbar-toggler:focus {
     outline: none;
-    box-shadow: 0;
+    box-shadow: 0 0 0 0 !important;
 }
 
 .nav-link-resp {
