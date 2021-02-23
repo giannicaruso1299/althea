@@ -110,9 +110,9 @@ function Header() {
                             </ul>
                         </nav>
                     </div>
-                    <div className="col-6 d-lg-none d-block pt-4">
+                    <div className="col-6 d-lg-none d-block mt-3 pt-1 ml-0 pl-0 align-items-center">
                         <nav className="navbar navbar-expand-lg bg-transparent" id="myLinks">
-                            <button className="navbar-toggler" id="toggler-button" type="button" data-toggle="collapse" href="#collapseContainer" aria-controls="collapseContainer" aria-expanded="false" aria-label="Toggle navigation">
+                            <button className="navbar-toggler ml-0 pl-0" id="toggler-button" type="button" data-toggle="collapse" href="#collapseContainer" aria-controls="collapseContainer" aria-expanded="false" aria-label="Toggle navigation">
                                 <i className="fas fa-bars fa-2x" id="menu">&nbsp;</i>
                             </button>
                         </nav>
@@ -121,9 +121,13 @@ function Header() {
                         <div className="row justify-content-center ml-3">
                             <h5 className="font-weight-bold float-right ml-md-5 mr-3">Seguici su</h5>
                         </div>
-                        <div className="row float-right ml-md-5 mx-2">
-                            <a href="https://www.facebook.com/altheabomboniere" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook fa-2x mr-2" id="facebook"/></a>
-                            <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"/></a>
+                        <div className="row float-right ml-md-5 mx-2 d-flex">
+                            <div className="col-6">
+                                <a href="https://www.facebook.com/altheabomboniere" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook fa-2x" id="facebook"/></a>
+                            </div>
+                            <div className="col-6 pl-1">
+                                <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"/></a>
+                            </div>
                         </div>
                     </div>
                     <div className="container-fluid collapse navbar-collapse d-lg-none" id="collapseContainer">
