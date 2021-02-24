@@ -352,9 +352,12 @@ li:hover > ul.drop-menu li:nth-child(6) {
 }
 
 /*xs*/
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 330px) {
     #logo {
         width: 100%;
+    }
+    .carousel-item {
+        max-width: 300px;
     }
 
 }
@@ -594,7 +597,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
 /*}*/
 
 /*!*sm*!*/
-@media screen and (min-width: 300px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 767px) {
     #logo {
         width: 100%;
     }

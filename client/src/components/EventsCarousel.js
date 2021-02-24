@@ -3,7 +3,7 @@ import React from 'react';
 function EventCarousel() {
     return (
         <div>
-            <div className="my-4 justify-content-center" style={{width: "330px", margin: "0 auto"}}>
+            <div className="my-4 justify-content-center">
                 <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"

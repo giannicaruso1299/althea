@@ -19,7 +19,7 @@ function HomePageCorpo() {
                 <div className="row mt-3 justify-content-center" id="carousel-container">
                     <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">
-                            <div className="carousel-item active">
+                            <div className="carousel-item active" id="carousel_home">
                                 <img className="d-block w-100" src={require("../img/foto_homepage/lg/1.png")} alt="First slide"/>
                             </div>
                             {array2.map(item => (

@@ -117,15 +117,15 @@ function Header() {
                             </button>
                         </nav>
                     </div>
-                    <div className="col-6 d-lg-none d-block float-right pr-3 pt-1">
-                        <div className="row justify-content-center ml-3">
-                            <h5 className="font-weight-bold float-right ml-md-5 mr-3">Seguici su</h5>
+                    <div className="col-6 d-lg-none d-block pt-2">
+                        <div className="row justify-content-center">
+                            <h5 className="font-weight-bold text-right">Seguici su</h5>
                         </div>
-                        <div className="row float-right ml-md-5 mx-2 d-flex">
-                            <div className="col-6">
-                                <a href="https://www.facebook.com/altheabomboniere" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook fa-2x" id="facebook"/></a>
+                        <div className="row float-right d-flex">
+                            <div className="col-8">
+                                <a href="https://www.facebook.com/altheabomboniere" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook fa-2x float-right ml-3" id="facebook"/></a>
                             </div>
-                            <div className="col-6 pl-1">
+                            <div className="col-4 pl-1">
                                 <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank"><i className="fab fa-instagram fa-2x" id="instagram"/></a>
                             </div>
                         </div>
