@@ -435,6 +435,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
         /*border: 1px solid red;*/
         margin: 0 auto;
         width: 755px;
+        max-height: 500px;
     }
     .carousel-item {
         /*border: 1px solid red;*/
@@ -609,6 +610,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
         max-width: 330px;
         min-height: 250px;
         max-height: 250px;
+        justify-content: center;
     }
     #carousel-container-sm {
         /*border: 1px solid red;*/
@@ -682,7 +684,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
     width: 40%;
 }
 .g-maps {
-    width: 60%;
+    width: 30%;
 }
 
 #cabim {
