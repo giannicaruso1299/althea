@@ -49,7 +49,7 @@ function Header() {
                 <div className="col-12 text-center mt-5 pt-5 pb-0">
                     <h1 className="navbar-motto">La scelta migliore per le tue cerimonie</h1>
                 </div>
-                <div className="row m-1 w-100">
+                <div className="row w-100">
                     <div className="col-12 d-lg-block d-none pt-4">
                         <nav className="navbar bg-transparent navbar-expand-lg" id="myLinks">
                             <ul className="navbar-nav">
@@ -113,7 +113,7 @@ function Header() {
                     <div className="col-6 d-lg-none d-block mt-3 pt-1 ml-0 pl-0 align-items-center">
                         <nav className="navbar navbar-expand-lg bg-transparent" id="myLinks">
                             <button className="navbar-toggler ml-0 pl-0" id="toggler-button" type="button" data-toggle="collapse" href="#collapseContainer" aria-controls="collapseContainer" aria-expanded="false" aria-label="Toggle navigation">
-                                <i className="fas fa-bars fa-2x" id="menu">&nbsp;</i>
+                                <i className="fas fa-bars fa-2x" id="menu"/>
                             </button>
                         </nav>
                     </div>
