@@ -623,6 +623,15 @@ li:hover > ul.drop-menu li:nth-child(6) {
     #navbar-motto {
         padding-top: 80px;
     }
+    .flip-card {
+        max-width: 125px;
+        max-height: 165px;
+        box-shadow: 0 10px 20px black;
+    }
+    .flip-card-back {
+        word-wrap: break-word;
+        bottom: 150px;
+    }
     .carousel-item {
         min-width: 330px;
         max-width: 330px;

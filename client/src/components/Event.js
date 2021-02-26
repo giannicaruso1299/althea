@@ -37,7 +37,8 @@ function Event(event) {
                 {(!loaded) && (
                     <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80} />
                 )}
-                <div className="row">
+                {/**md only**/}
+                <div className="row d-md-block d-none">
                     {items.map(item => (
                         <div className="col-lg-3 col-md-4 col-sm-6 my-3">
                             <div className="flip-card ml-3">
@@ -47,7 +48,27 @@ function Event(event) {
                                     </div>
                                     <div className="flip-card-back">
                                         <h2>{item.name}</h2>
-                                        <p>{item.description}</p>
+                                        <hr className="mx-3"/>
+                                        <p className="lead">{item.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                {/**sm only**/}
+                <div className="row d-block d-md-none">
+                    {items.map(item => (
+                        <div className="col-lg-3 col-md-4 col-sm-6 my-3">
+                            <div className="flip-card ml-3">
+                                <div className="flip-card-inner">
+                                    <div className="flip-card-front">
+                                        <img src={path + item.productImageSm} alt={item.name}/>
+                                    </div>
+                                    <div className="flip-card-back">
+                                        <p className="lead">{item.name}</p>
+                                        <hr className="mx-2"/>
+                                        <small className="lead">{item.description}</small>
                                     </div>
                                 </div>
                             </div>
