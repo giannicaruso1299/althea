@@ -83,15 +83,18 @@ router.get('/:event',(req,res) => {
 // @desc    Create An Item
 // @access  Public 
 router.post('/',upload.single('productImage'),async (req,res) => {
+    let fileName = req.file.filename;
     let inputFile = req.file.path;
     let filename = inputFile.slice(inputFile.indexOf('\\') + 1,);
     let outputName = filename;
     let outputSmName = filename;
     let path = inputFile.slice(0, inputFile.indexOf('\\') + 1);
-    let outputFile = path + '(lg)' + outputName;
-    let outputFileSm = path + '(sm)' +  outputSmName;
+    let outputFile = path + '(lg)' + fileName;
+    let outputFileSm = path + '(sm)' +  fileName;
     const output = sharp(inputFile).resize(250, 330, {fit: "fill"}).toFile(outputFile).then(file => console.log(file));
     const outputSm = sharp(inputFile).resize(125, 165, {fit: "fill"}).toFile(outputFileSm).then(file => console.log(file));
+    upload.array([outputFile, outputFileSm]);
+    console.log(path);
     const newItem = new Item({
         name: req.body.name,
         event: req.body.event,

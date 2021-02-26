@@ -40,7 +40,7 @@ function Event(event) {
                 <div className="row">
                     {items.map(item => (
                         <div className="col-lg-3 col-md-4 col-sm-6 my-3">
-                            <div className="flip-card ml-2">
+                            <div className="flip-card ml-3">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
                                         <img src={path + item.productImage} alt={item.name}/>
