@@ -11,26 +11,21 @@ function Event(event) {
 
     let path="http://althea-bomboniere.it:5000/";
     useEffect(() => {
-        fetchItems();
-      });
+        fetchItems().then(r => console.log("Fatto"))
+      },[]);
 
     const myPath = event.location.pathname.slice(1);
 
       const fetchItems = async () => {
           await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
-            .then(res => {
-                setItems(res.data);
-                setLoaded(true);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-      }
-
-      const showPath = (e) => {
-          const target = e.target;
-          const productImage = target.getAttribute('data-product');
-          console.log(productImage);
+              .then(res => {
+                  console.log(res);
+                  setItems(res.data);
+                  setLoaded(true);
+              })
+              .catch(err => {
+                  console.log(err);
+              });
       }
 
     return (
@@ -45,10 +40,10 @@ function Event(event) {
                 <div className="row">
                     {items.map(item => (
                         <div className="col-lg-3 col-md-4 col-sm-6 my-3">
-                            <div className="flip-card">
+                            <div className="flip-card ml-2">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
-                                        <img src={path + item.productImage} data-product = {item.productImage} onClick={showPath} alt={item.name} style={{width: "100%", height: "100%"}}/>
+                                        <img src={path + item.productImage} alt={item.name}/>
                                     </div>
                                     <div className="flip-card-back">
                                         <h2>{item.name}</h2>

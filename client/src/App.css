@@ -160,10 +160,9 @@ ul.drop-menu {
 }
 
 .flip-card {
+    /*border: 1px solid red;*/
     background-color: transparent;
-    width: 100%;
-    height: 100%;
-    border: 1px transparent;
+    /*width: 100%;*/
     perspective: 1000px;
     animation: menu1 3s forwards;
     border-radius: 2px;
@@ -172,7 +171,6 @@ ul.drop-menu {
 .flip-card-inner {
     position: relative;
     width: 100%;
-    height: 100%;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -183,19 +181,21 @@ ul.drop-menu {
   }
 
 .flip-card-front, .flip-card-back {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
 .flip-card-front {
+    position: relative;
     background-color: transparent;
     color: black;
 }
 
 .flip-card-back {
+    /*border: 1px solid red;*/
+    position: relative;
     background-color: transparent;
     color: black;
     transform: rotateY(180deg);
@@ -433,6 +433,16 @@ li:hover > ul.drop-menu li:nth-child(6) {
 
     html {
         min-height: 1000px;
+    }
+
+    .flip-card-back {
+        bottom: 300px;
+    }
+
+    .flip-card {
+        max-width: 250px;
+        max-height: 330px;
+        box-shadow: 0 10px 20px black;
     }
 
     #logo {
