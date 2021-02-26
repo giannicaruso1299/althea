@@ -9,7 +9,7 @@ function Event(event) {
     const [loaded, setLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    let path="http://althea-bomboniere.it:5000/";
+    let path="http://localhost:5000/";
     useEffect(() => {
         fetchItems().then(r => console.log("Fatto"))
       },[]);
@@ -17,7 +17,7 @@ function Event(event) {
     const myPath = event.location.pathname.slice(1);
 
       const fetchItems = async () => {
-          await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
+          await axios.get("http://localhost:5000/api/items/" + myPath)
               .then(res => {
                   console.log(res);
                   setItems(res.data);
