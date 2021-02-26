@@ -8,6 +8,13 @@ html, body {
     color: brown;
 }
 
+/*#carousel-container:hover {*/
+/*    margin: 0 auto;*/
+/*    width: 60%;*/
+/*    max-height: 110%;*/
+/*    transition: ease-in .2s;*/
+/*}*/
+
 #myFooter {
     background-color: #eee;
     font-family: "Source Sans Pro", serif;
@@ -436,6 +443,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
         margin: 0 auto;
         width: 755px;
         max-height: 500px;
+        transition: ease-in .2s;
     }
     .carousel-item {
         /*border: 1px solid red;*/
