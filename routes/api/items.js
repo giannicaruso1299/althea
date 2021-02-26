@@ -85,10 +85,10 @@ router.get('/:event',(req,res) => {
 router.post('/',upload.single('productImage'),async (req,res) => {
     let fileName = req.file.filename;
     let inputFile = req.file.path;
-    let filename = inputFile.slice(inputFile.indexOf('\\') + 1,);
+    let filename = inputFile.slice(inputFile.indexOf('/') + 1,);
     let outputName = '(lg)' +  filename;
     let outputSmName = '(sm)' + filename;
-    let path = inputFile.slice(0, inputFile.indexOf('\\') + 1);
+    let path = inputFile.slice(0, inputFile.indexOf('/') + 1);
     let outputFile = path + outputName;
     let outputFileSm = path + '(sm)' +  fileName;
     const output = sharp(inputFile).resize(250, 330, {fit: "fill"}).toFile(outputFile).then(file => console.log("Fatto"));
