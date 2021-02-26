@@ -27,6 +27,12 @@ function Event(event) {
             });
       }
 
+      const showPath = (e) => {
+          const target = e.target;
+          const productImage = target.getAttribute('data-product');
+          console.log(productImage);
+      }
+
     return (
         <div>
             <div className="container-fluid">
@@ -42,7 +48,7 @@ function Event(event) {
                             <div className="flip-card">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
-                                        <img src={path + item.productImage} alt={item.name} style={{width: "100%", height: "100%"}}/>
+                                        <img src={path + item.productImage} data-product = {item.productImage} onClick={showPath} alt={item.name} style={{width: "100%", height: "100%"}}/>
                                     </div>
                                     <div className="flip-card-back">
                                         <h2>{item.name}</h2>
