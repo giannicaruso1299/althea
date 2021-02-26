@@ -90,6 +90,10 @@ function EventCarousel() {
                                 aria-label="Slide 2"/>
                         <button type="button" data-bs-target="#carouselExampleDarkSm" data-bs-slide-to="2"
                                 aria-label="Slide 3"/>
+                        <button type="button" data-bs-target="#carouselExampleDarkSm" data-bs-slide-to="3"
+                                aria-label="Slide 4"/>
+                        <button type="button" data-bs-target="#carouselExampleDarkSm" data-bs-slide-to="4"
+                                aria-label="Slide 5"/>
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active" data-bs-interval="10000">
@@ -111,6 +115,20 @@ function EventCarousel() {
                             <div className="carousel-caption d-block d-md-none">
                                 <h5 className="h3">Matrimonio</h5>
                                 <p className="lead">Festeggia le tue nozze da noi con il nostro fantastico catalogo</p>
+                            </div>
+                        </div>
+                        <div className="carousel-item">
+                            <img src={require('../img/foto_homepage/carousel/sm/nascita.png')} className="d-block w-100" alt="..."/>
+                            <div className="carousel-caption d-block d-md-none">
+                                <h5 className="h3">Nascita</h5>
+                                <p className="lead">Tutte le nostre bomboniere per nascita le trovi qui</p>
+                            </div>
+                        </div>
+                        <div className="carousel-item">
+                            <img src={require('../img/foto_homepage/carousel/sm/prima_comunione.png')} className="d-block w-100" alt="..."/>
+                            <div className="carousel-caption d-block d-md-none">
+                                <h5 className="h3">Prima Comunione</h5>
+                                <p className="lead">Da noi la Prima Comunione sarà ancora più speciale</p>
                             </div>
                         </div>
                     </div>
