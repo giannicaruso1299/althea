@@ -29,7 +29,7 @@ function Event(event) {
 
     return (
         <div>
-            <div className="container-fluid" id="laurea">
+            <div className="container-fluid">
                 <Affiliati/>
                 <Header/>
                 <h1 className="text-center mt-3 text-capitalize">{myPath}</h1>

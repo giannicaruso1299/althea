@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const {Schema} = mongoose;
 
 const ItemSchema = new Schema({
     name: {
@@ -21,6 +21,9 @@ const ItemSchema = new Schema({
     productImage: {
         type:String,
         required: true
+    },
+    productImageSm: {
+        type: String
     }
 });
 

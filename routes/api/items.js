@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const sharp = require('sharp');
 
 function formatted_date() {
-    var result="";
-    var d = new Date();
+    let result="";
+    let d = new Date();
     result+=d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear()+"_" +d.getHours()+"-"+d.getMinutes()+"-"+d.getSeconds();
     return result;
 }
@@ -41,7 +42,7 @@ const upload = multer({
 });
 
 
-const Item = require('../../models/item');
+Item = require('../../models/item');
 
 // @route   GET api/items
 // @desc    Get All Items
@@ -50,7 +51,7 @@ router.get('/',(req,res) => {
     Item.find()
         .sort({date:1})
         .then(items => {
-            if(items.length == 0) {
+            if(items.length === 0) {
                 console.log("No elements in database");
             }
             res.json(items);
@@ -67,7 +68,7 @@ router.get('/',(req,res) => {
 router.get('/:event',(req,res) => {
     Item.find({$or: [{event:req.params.event},{event:capitalize(req.params.event)}]})
         .then(items => {
-            if(items.length == 0) {
+            if(items.length === 0) {
                 console.log(`${req.params.event}: no elements in database`);
             }
             res.json(items);
@@ -81,25 +82,24 @@ router.get('/:event',(req,res) => {
 // @route   POST api/items
 // @desc    Create An Item
 // @access  Public 
-router.post('/',upload.single('productImage'),(req,res) => {
+router.post('/',upload.single('productImage'),async (req,res) => {
+    let inputFile = req.file.path;
+    let filename = inputFile.slice(inputFile.indexOf('\\') + 1,);
+    let outputName = filename;
+    let outputSmName = filename;
+    let path = inputFile.slice(0, inputFile.indexOf('\\') + 1);
+    let outputFile = path + 'lg\\' + outputName;
+    let outputFileSm = path + 'sm\\' +  outputSmName;
+    const output = sharp(inputFile).resize(500, 750, {fit: "fill"}).toFile(outputFile).then(file => console.log(file));
+    const outputSm = sharp(inputFile).resize(250, 330, {fit: "fill"}).toFile(outputFileSm).then(file => console.log(file));
     const newItem = new Item({
-        name:req.body.name,
-        event:req.body.event,
-        description:req.body.description,
-        productImage: req.file.path
+        name: req.body.name,
+        event: req.body.event,
+        description: req.body.description,
+        productImage: outputFile,
+        productImageSm: outputFileSm
     });
-    if(newItem.productImage === null || newItem.productImage === undefined) {
-        newItem.productImage="";
-    }
-    newItem.save()
-        .then(item => {
-            res.json(item);
-            console.log(`Added element to database: ${item.name}`);
-        })
-        .catch(err => {
-            res.send(err);
-        })
-    ;
+    await newItem.save().then(item => res.status(200).json(item)).catch(err => res.status(400).send(err));
 });
 
 // @route   DELETE api/items
@@ -112,7 +112,7 @@ router.delete('/:id', (req, res) => {
             console.log("Element successfully deleted from database!");
         }))
         .catch(err => {
-            res.status(404).json({success:false});
+            res.status(400).send(err);
             console.log("Error, element not deleted");
         });
 });
