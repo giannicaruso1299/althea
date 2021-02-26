@@ -36,7 +36,7 @@ class AddItem extends Component {
         fd.append('description',document.getElementById('description').value);
         fd.append('productImage',this.state.selectedFile,this.state.selectedFile.name);
 
-        axios.post('http://localhost:5000/api/items',fd)
+        axios.post('http://althea-bomboniere.it:5000/api/items',fd)
             .then(res => {
                 this.setState({
                     modal:true
