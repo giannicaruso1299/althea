@@ -40,16 +40,16 @@ function Event(event) {
                 {/**md only**/}
                 <div className="row d-md-flex flex-row d-none">
                     {items.map(item => (
-                        <div className="col-lg-3 col-md-4 col-sm-6 my-3">
-                            <div className="flip-card ml-3">
+                        <div className="col-lg-3 col-sm-6 my-3 justify-content-center">
+                            <div className="flip-card mx-5">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
                                         <img src={path + item.productImage} alt={item.name}/>
                                     </div>
                                     <div className="flip-card-back">
-                                        <h2>{item.name}</h2>
+                                        <p className="lead font-weight-bold">{item.name}</p>
                                         <hr className="mx-3"/>
-                                        <p className="lead">{item.description}</p>
+                                        <small className="lead">{item.description}</small>
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +66,9 @@ function Event(event) {
                                         <img src={path + item.productImageSm} className="w-100" alt={item.name}/>
                                     </div>
                                     <div className="flip-card-back">
-                                        <p className="lead">{item.name}</p>
+                                        <p className="font-weight-bold">{item.name}</p>
                                         <hr className="mx-2"/>
-                                        <small className="lead">{item.description}</small>
+                                        <small className="font-weight-bold">{item.description}</small>
                                     </div>
                                 </div>
                             </div>
