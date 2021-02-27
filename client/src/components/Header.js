@@ -156,8 +156,8 @@ function Header() {
                                     <div className="collapse" id="collapseExample2">
                                         <ul className="mt-0 dropdown-menu-sm-right d-block d-lg-none">
                                             {list2.map(item => (
-                                                <li key={item}>
-                                                    <button className="btn-link nav-link-resp bg-transparent border-0" onClick={createPath}>{item}</button>
+                                                <li key={item} style={{border:"1px solid red", width:"100%"}}>
+                                                    <button className="btn-link nav-link-resp bg-transparent border-0 font-weight-bold" onClick={createPath}>{item}</button>
                                                 </li>
                                             ))}
                                         </ul>
