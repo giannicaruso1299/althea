@@ -15,6 +15,11 @@ code {
 }
 
 @font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'), url('../src/font/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Source Sans Pro';
   src: local('Source Sans Pro'), url('../src/font/SourceSansPro-SemiBold.ttf') format('truetype');
 }

@@ -160,6 +160,7 @@ ul.drop-menu {
 }
 
 .flip-card {
+    font-family: 'Open Sans', serif;
     background-color: transparent;
     perspective: 1000px;
     animation: menu1 3s forwards;
