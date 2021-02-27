@@ -92,7 +92,7 @@ router.post('/',upload.single('productImage'),async (req,res) => {
     let outputFile = path + outputName;
     let outputFileSm = path + '(sm)' +  fileName;
     const output = sharp(inputFile).resize(250, 330, {fit: "fill"}).toFile(outputFile).then(file => console.log("Fatto"));
-    const outputSm = sharp(inputFile).resize(125, 165, {fit: "fill"}).toFile(outputFileSm).then(file => console.log(file));
+    const outputSm = sharp(inputFile).resize(180, 250, {fit: "fill"}).toFile(outputFileSm).then(file => console.log(file));
     upload.array([outputFile, outputFileSm]);
     const newItem = new Item({
         name: req.body.name,

@@ -630,6 +630,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
     }
     .flip-card-back {
         word-wrap: break-word;
+        word-wrap: break-word;
         bottom: 150px;
     }
     .carousel-item {

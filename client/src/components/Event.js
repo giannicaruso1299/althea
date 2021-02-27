@@ -59,8 +59,8 @@ function Event(event) {
                 {/**sm only**/}
                 <div className="row d-block d-md-none">
                     {items.map(item => (
-                        <div className="col-lg-3 col-md-4 col-sm-6 my-3">
-                            <div className="flip-card ml-3">
+                        <div className="col-6 ml-2 my-3">
+                            <div className="flip-card">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
                                         <img src={path + item.productImageSm} alt={item.name}/>
