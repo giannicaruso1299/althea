@@ -86,13 +86,13 @@ router.post('/',upload.single('productImage'),async (req,res) => {
     let fileName = req.file.filename;
     let inputFile = req.file.path;
     let filename = inputFile.slice(inputFile.indexOf('/') + 1,);
-    let outputName = '(lg)' +  filename;
-    let outputSmName = '(sm)' + filename;
+    let outputName = '(lg)' + fileName;
+    let outputSmName = '(sm)' + fileName;
     let path = inputFile.slice(0, inputFile.indexOf('/') + 1);
     let outputFile = path + outputName;
-    let outputFileSm = path + '(sm)' +  fileName;
+    let outputFileSm = path +  outputSmName;
     const output = sharp(inputFile).resize(250, 330, {fit: "fill"}).toFile(outputFile).then(file => console.log("Fatto"));
-    const outputSm = sharp(inputFile).resize(180, 250, {fit: "fill"}).toFile(outputFileSm).then(file => console.log(file));
+    const outputSm = sharp(inputFile).resize(160, 250, {fit: "fill"}).toFile(outputFileSm).then(file => console.log(file));
     upload.array([outputFile, outputFileSm]);
     const newItem = new Item({
         name: req.body.name,
@@ -101,6 +101,7 @@ router.post('/',upload.single('productImage'),async (req,res) => {
         productImage: outputFile,
         productImageSm: outputFileSm
     });
+    console.log(newItem);
     await newItem.save().then(item => res.status(200).json(item)).catch(err => res.status(400).send(err));
 });
 
