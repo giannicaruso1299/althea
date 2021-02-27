@@ -29,10 +29,6 @@ html, body {
     box-shadow: 0 0 0 0 !important;
 }
 
-.nav-item {
-    border: 1px solid red;
-}
-
 .nav-link-resp {
     color: black !important;
     border: none;
