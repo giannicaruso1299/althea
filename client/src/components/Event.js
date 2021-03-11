@@ -12,7 +12,7 @@ function Event(event) {
     let path="http://althea-bomboniere.it:5000/";
     useEffect(() => {
         fetchItems().then(r => console.log("Fatto"))
-      },[]);
+      });
 
     const myPath = event.location.pathname.slice(1);
 

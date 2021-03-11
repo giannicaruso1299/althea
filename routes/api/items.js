@@ -96,12 +96,14 @@ router.post('/',upload.single('productImage'),async (req,res) => {
     upload.array([outputFile, outputFileSm]);
     const newItem = new Item({
         name: req.body.name,
-        event: req.body.event,
+        category: req.body.category,
+        event: req.body.event || '',
+        colore: req.body.colore || '',
+        conf_event: req.body.conf_event || '',
         description: req.body.description,
         productImage: outputFile,
         productImageSm: outputFileSm
     });
-    console.log(newItem);
     await newItem.save().then(item => res.status(200).json(item)).catch(err => res.status(400).send(err));
 });
 

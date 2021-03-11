@@ -18,26 +18,60 @@ class AddItem extends Component {
         selectedFile:""
     };
 
+    categories = ["Eventi","Confetti","Confettate"];
+    events = ['Nascita','Battesimo','Compleanno','Comunione','Cresima','Laurea','Matrimonio'];
+    confetti = ['Bianco','Rosa','Celeste','Rosso','Colorato','Speciali'];
+    confettate = ['Laurea','Battesimo','Compleanno','Matrimonio'];
+
     handleFile = (e) => {
         this.setState({
             selectedFile: e.target.files[0]
         });
     };
 
-
+    populateOptions = (e) => {
+        const target = e.target.value;
+        const selection = this.categories.indexOf(target);
+        if (selection === 1) {
+            document.getElementById('confetti').classList.remove('d-none');
+            document.getElementById('eventi').classList.add('d-none');
+            document.getElementById('confettate').classList.add('d-none');
+        } else if (selection === 2) {
+            document.getElementById('confettate').classList.remove('d-none');
+            document.getElementById('confetti').classList.add('d-none');
+            document.getElementById('eventi').classList.add('d-none');
+        } else {
+            document.getElementById('eventi').classList.remove('d-none');
+            document.getElementById('confetti').classList.add('d-none');
+            document.getElementById('confettate').classList.add('d-none');
+        }
+        console.log(selection);
+    }
 
     fileUploadHandler = (e) => {
 
         e.preventDefault();
 
+        const evento = document.getElementById('evento').value;
+        const colore = document.getElementById('colore').value;
+        const conf_event = document.getElementById('conf_event').value;
+
         const fd = new FormData();
         fd.append('name',document.getElementById('nome').value);
-        fd.append('event',document.getElementById('evento').value);
+        fd.append('category', document.getElementById('categoria').value);
+        if (this.categories.indexOf(document.getElementById('categoria').value) === 0) {
+            fd.append('event', evento);
+        } else if (this.categories.indexOf(document.getElementById('categoria').value) === 1) {
+            fd.append('colore', colore);
+        } else if (this.categories.indexOf(document.getElementById('categoria').value) === 2) {
+            fd.append('conf_event', conf_event);
+        }
         fd.append('description',document.getElementById('description').value);
         fd.append('productImage',this.state.selectedFile,this.state.selectedFile.name);
 
         axios.post('http://althea-bomboniere.it:5000/api/items',fd)
             .then(res => {
+                console.log(res.data);
                 this.setState({
                     modal:true
                 });
@@ -72,17 +106,42 @@ class AddItem extends Component {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
+                            <Label for="exampleEmail" sm={2}>Categoria</Label>
+                            <Col sm={10}>
+                                <Input type="select" name="select" id="categoria" placeholder="Scegli una categoria" onChange={this.populateOptions}>
+                                    {this.categories.map(item => (
+                                        <option>{item}</option>
+                                    ))}
+                                </Input>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row id="eventi">
                             <Label for="exampleEmail" sm={2}>Evento</Label>
                             <Col sm={10}>
                                 <Input type="select" name="select" id="evento" placeholder="Descrizione dell'evento" onChange={this.handleEvent}>
-                                    <option>Nascita</option>
-                                    <option>Battesimo</option>
-                                    <option>Compleanno</option>
-                                    <option>Comunione</option>
-                                    <option>Cresima</option>
-                                    <option>Laurea</option>
-                                    <option>Matrimonio</option>
-                                    <option>Altri</option>
+                                    {this.events.map(item => (
+                                        <option>{item}</option>
+                                    ))}
+                                </Input>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row className="d-none" id="confetti">
+                            <Label for="exampleEmail" sm={2}>Colore</Label>
+                            <Col sm={10}>
+                                <Input type="select" name="select" id="colore" placeholder="Colore dei confetti">
+                                    {this.confetti.map(item => (
+                                        <option>{item}</option>
+                                    ))}
+                                </Input>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row className="d-none" id="confettate">
+                            <Label for="exampleEmail" sm={2}>Evento</Label>
+                            <Col sm={10}>
+                                <Input type="select" name="select" id="conf_event" placeholder="Colore dei confetti">
+                                    {this.confettate.map(item => (
+                                        <option>{item}</option>
+                                    ))}
                                 </Input>
                             </Col>
                         </FormGroup>

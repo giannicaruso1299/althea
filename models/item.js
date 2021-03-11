@@ -6,9 +6,18 @@ const ItemSchema = new Schema({
         type:String,
         required:true
     },
+    category: {
+        type: String,
+        required: true
+    },
     event: {
         type:String,
-        required:true
+    },
+    colore: {
+        type: String
+    },
+    conf_event: {
+        type: String
     },
     description: {
         type:String,
