@@ -11,22 +11,21 @@ function Event(event) {
 
     let path="http://althea-bomboniere.it:5000/";
     useEffect(() => {
+        const fetchItems = async () => {
+            await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
+                .then(res => {
+                    console.log(res);
+                    setItems(res.data);
+                    setLoaded(true);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
         fetchItems().then(r => console.log("Fatto"))
-      });
+      },[]);
 
     const myPath = event.location.pathname.slice(1);
-
-      const fetchItems = async () => {
-          await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
-              .then(res => {
-                  console.log(res);
-                  setItems(res.data);
-                  setLoaded(true);
-              })
-              .catch(err => {
-                  console.log(err);
-              });
-      }
 
     return (
         <div>
