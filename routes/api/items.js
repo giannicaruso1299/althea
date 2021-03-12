@@ -66,7 +66,7 @@ router.get('/',(req,res) => {
 // @desc    Get All Items Of A Specified Event
 // @access  Public 
 router.get('/:event',(req,res) => {
-    Item.find({$or: [{event:req.params.event},{event:capitalize(req.params.event)}]})
+    Item.find({$and: [{category:"Eventi"},{$or: [{event:req.params.event},{event:capitalize(req.params.event)}]}]})
         .then(items => {
             if(items.length === 0) {
                 console.log(`${req.params.event}: no elements in database`);

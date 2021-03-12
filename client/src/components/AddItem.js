@@ -102,7 +102,7 @@ class AddItem extends Component {
                         <FormGroup row>
                             <Label for="exampleEmail" sm={2}>Nome Oggetto</Label>
                             <Col sm={10}>
-                                <Input type="text" name="nome" id="nome" placeholder="Nome dell'oggetto" onChange={this.handleName}/>
+                                <Input type="text" name="nome" id="nome" placeholder="Nome dell'oggetto"/>
                             </Col>
                         </FormGroup>
                         <FormGroup row>
@@ -148,7 +148,7 @@ class AddItem extends Component {
                         <FormGroup row>
                             <Label for="exampleText" sm={2}>Descrizione</Label>
                             <Col sm={10}>
-                                <Input type="textarea" name="description" id="description" placeholder="Descrizione dell'oggetto"onChange={this.handleDesc}/>
+                                <Input type="textarea" name="description" id="description" placeholder="Descrizione dell'oggetto"/>
                             </Col>
                         </FormGroup>
                         <FormGroup row>
