@@ -1,17 +1,22 @@
 body {
   margin: 0;
-  font-family: 'shelley_allegro';
+  font-family: 'shelley_allegro', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'shelley_allegro';
+  font-family: 'shelley_allegro', serif;
 }
 
 @font-face {
   font-family: 'shelley_allegro';
   src: local('shelley_allegro'), url('../src/font/34460_SHAL____.ttf') format('truetype');;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: local('Open Sans'), url('../src/font/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {

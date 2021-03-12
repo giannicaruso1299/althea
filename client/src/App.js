@@ -7,6 +7,7 @@ import Event from './components/Event';
 import HomePageCorpo from "./components/HomePageCorpo";
 import Confettate from "./components/Confettate";
 import Footer from "./components/Footer";
+import Confetti from "./components/Confetti";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/auth" component={Auth}/>
             <Route path="/:event" exact component={Event}/>
             <Route path="/confettate/:event" exact component={Confettate} />
+            <Route path="/confetti/:colore" exact component={Confetti}/>
           </Switch>
         </div>
         <Footer/>
