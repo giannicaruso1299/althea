@@ -18,7 +18,6 @@ function Laurea() {
           await axios.get("http://althea-bomboniere.it:5000/api/items/laurea")
             .then(res => {
                 setItems(res.data);
-                console.log(res.data[0].productImage);
                 setLoaded(true);
             })
             .catch(err => {

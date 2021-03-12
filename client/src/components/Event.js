@@ -14,7 +14,6 @@ function Event(event) {
         const fetchItems = async () => {
             await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
                 .then(res => {
-                    console.log(res);
                     setItems(res.data);
                     setLoaded(true);
                 })

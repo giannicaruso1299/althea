@@ -45,7 +45,6 @@ class AddItem extends Component {
             document.getElementById('confetti').classList.add('d-none');
             document.getElementById('confettate').classList.add('d-none');
         }
-        console.log(selection);
     }
 
     fileUploadHandler = (e) => {
@@ -71,7 +70,6 @@ class AddItem extends Component {
 
         axios.post('http://althea-bomboniere.it:5000/api/items',fd)
             .then(res => {
-                console.log(res.data);
                 this.setState({
                     modal:true
                 });

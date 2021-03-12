@@ -33,8 +33,6 @@ class Auth extends Component {
             password:this.state.password
         }
 
-        console.log(body);
-
         axios.post("http://althea-bomboniere.it:5000/api/users/findUser", body)
             .then(res => {
                 if(res.data.length > 0) {

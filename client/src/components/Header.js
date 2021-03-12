@@ -14,7 +14,6 @@ function Header() {
     const toggleButton = (e) => {
         const i = e.target;
         const classes = i.classList;
-        console.log(classes);
         classes.forEach(classe => {
             if(classe === 'fa-plus-circle') {
                 i.classList.replace(classe,'fa-minus-circle');
@@ -22,7 +21,6 @@ function Header() {
                 i.classList.replace(classe, 'fa-plus-circle');
             }
         });
-        console.log(classes);
     }
 
     const createPath = (e) => {
