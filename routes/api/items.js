@@ -79,6 +79,20 @@ router.get('/:event',(req,res) => {
         });
 });
 
+router.get('/confetti/:colore',(req,res) => {
+    Item.find({$and: [{category:"Confetti"},{$or: [{colore:req.params.colore},{colore:capitalize(req.params.colore)}]}]})
+        .then(items => {
+            if(items.length === 0) {
+                console.log(`${req.params.event}: no elements in database`);
+            }
+            res.json(items);
+            console.log(`${req.params.event}: elements in db:`);
+            items.forEach(item => {
+                console.log(item.name);
+            });
+        });
+});
+
 // @route   POST api/items
 // @desc    Create An Item
 // @access  Public 
