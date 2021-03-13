@@ -69,7 +69,7 @@ class AddItem extends Component {
         fd.append('productImage',this.state.selectedFile,this.state.selectedFile.name);
 
         axios.post('http://althea-bomboniere.it:5000/api/items',fd)
-            .then(res => {
+            .then(() => {
                 this.setState({
                     modal:true
                 });
@@ -108,7 +108,7 @@ class AddItem extends Component {
                             <Col sm={10}>
                                 <Input type="select" name="select" id="categoria" placeholder="Scegli una categoria" onChange={this.populateOptions}>
                                     {this.categories.map(item => (
-                                        <option>{item}</option>
+                                        <option key={item}>{item}</option>
                                     ))}
                                 </Input>
                             </Col>
@@ -118,7 +118,7 @@ class AddItem extends Component {
                             <Col sm={10}>
                                 <Input type="select" name="select" id="evento" placeholder="Descrizione dell'evento" onChange={this.handleEvent}>
                                     {this.events.map(item => (
-                                        <option>{item}</option>
+                                        <option key={item}>{item}</option>
                                     ))}
                                 </Input>
                             </Col>
@@ -128,7 +128,7 @@ class AddItem extends Component {
                             <Col sm={10}>
                                 <Input type="select" name="select" id="colore" placeholder="Colore dei confetti">
                                     {this.confetti.map(item => (
-                                        <option>{item}</option>
+                                        <option key={item}>{item}</option>
                                     ))}
                                 </Input>
                             </Col>
@@ -138,7 +138,7 @@ class AddItem extends Component {
                             <Col sm={10}>
                                 <Input type="select" name="select" id="conf_event" placeholder="Colore dei confetti">
                                     {this.confettate.map(item => (
-                                        <option>{item}</option>
+                                        <option key={item}>{item}</option>
                                     ))}
                                 </Input>
                             </Col>
