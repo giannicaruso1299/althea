@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const dotenv = require('dotenv');
 
 const items = require('./routes/api/items');
 const users = require('./routes/api/users');
@@ -11,6 +12,8 @@ app.use(bodyParser.json());
 app.use(cors({origin:true, credentials:true}));
 
 const db = require('./config/keys.js').mongoURI;
+
+dotenv.config();
 
 mongoose.connect(db,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true})
     .then(() => console.log('MongoDB connected...'))

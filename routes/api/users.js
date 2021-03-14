@@ -1,7 +1,50 @@
 const express = require('express');
 const router = express.Router();
-
+const Token = require('../../models/Token');
+const bcrypt = require('bcrypt');
+const crypto = require('crypto');
+const jwt = require('jsonwebtoken');
+const verify = require('./verifyToken');
 const User = require('../../models/user');
+
+router.post('/register', async (req, res) => {
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(req.body.password, salt);
+
+    let user = new User({
+        nomeUtente: req.body.nomeUtente,
+        password: hashPassword
+    });
+
+    try {
+        await user.save()
+            .then(async usr => {
+                let token = new Token({
+                    _userId: usr._id,
+                    token: crypto.randomBytes(16).toString('hex')
+                });
+                await token.save();
+                res.status(200).send(user);
+            })
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+router.post('/login', async (req, res) => {
+    await User.findOne({nomeUtente: req.body.nomeUtente})
+        .then(async usr => {
+            const validPass = await bcrypt.compare(req.body.password, usr.password);
+            if (!validPass) {
+                return res.status(400).send('Invalid password');
+            }
+            const token = jwt.sign({_id: usr._id}, process.env.TOKEN_SECRET);
+            res.header('auth-token', token).send(token);
+        })
+        .catch(() => {
+            res.status(400).send('Utente non trovato');
+        })
+})
 
 // @route   GET api/users
 // @desc    Get All Users
