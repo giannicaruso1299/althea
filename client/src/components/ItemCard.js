@@ -144,7 +144,7 @@ function ItemCard({items, path}) {
     return (
         <div className="row mb-4" style={{fontFamily:"sans-serif"}}>
             {items.map(item => (
-                <div className="col-sm-3 col-6">
+                <div className="col-md-3 col-6">
                     <div className="card w-sm-75">
                         <img src={path + item.productImage} className="card-img-top" alt={item.name}/>
                         <div className="card-body">
