@@ -55,9 +55,10 @@ router.get('/', verify, async (req,res) => {
         .sort({date:1})
         .then(items => {
             if(items.length === 0) {
-                console.log("No elements in database");
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.json(items);
             }
-            res.json(items);
             console.log("Elements in db: ");
             items.forEach(item => {
                 console.log(item.name);
@@ -153,6 +154,7 @@ router.post('/update', verify, upload.single('productImage'), async (req, res) =
                         if (err) {
                             return err
                         }
+                        res.status(200).send(result);
                         res.status(200).send(result);
                     })
                 }).catch(err => {
