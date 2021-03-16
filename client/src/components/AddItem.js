@@ -43,8 +43,10 @@ function AddItem() {
             .catch(err => {
                 if (err.response.status === 400) {
                     if (err.response.data === 'Nessun elemento') {
+                        setLoaded(true);
                         setNoElement(true);
                     } else {
+                        setLoaded(true);
                         setUnauthorized(true)
                     }
                 }
