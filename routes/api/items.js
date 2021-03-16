@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const sharp = require('sharp');
+const verify = require('./verifyToken');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const crypto = require('crypto');
+const Item = require('../../models/item');
+const fs = require('fs');
 
 function formatted_date() {
     let result="";
@@ -41,13 +47,10 @@ const upload = multer({
     fileFilter: fileFilter
 });
 
-
-Item = require('../../models/item');
-
 // @route   GET api/items
 // @desc    Get All Items
 // @access  Public 
-router.get('/',(req,res) => {
+router.get('/', verify, async (req,res) => {
     Item.find()
         .sort({date:1})
         .then(items => {
@@ -79,6 +82,88 @@ router.get('/:event',(req,res) => {
         });
 });
 
+router.get('/findItem/:id', verify,(req, res) => {
+    Item.findById(req.params.id)
+        .then(item => {
+            res.status(200).send(item);
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+})
+
+router.post('/updatetext', verify, async (req, res) => {
+    await Item.findOne({_id: req.body.id})
+        .then(async item => {
+            await Item.updateOne({_id: req.body.id}, {$set: {
+                name: req.body.name || item.name,
+                    colore : req.body.colore || item.colore,
+                    event : req.body.event || item.event,
+                    conf_event : req.body.conf_event || item.conf_event,
+                    description : req.body.description || item.description,
+            }})
+                .then(result => {
+                res.status(200).send(result);
+            })
+                .catch(err => {
+                    res.status(400).send(err);
+                })
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+})
+
+router.post('/update', verify, upload.single('productImage'), async (req, res) => {
+    let fileNameUpdate = req.file.filename;
+    let inputFile = req.file.path;
+    let filename = inputFile.slice(inputFile.indexOf('/') + 1,);
+    let outputName = '(lg)' + fileNameUpdate;
+    let outputSmName = '(sm)' + fileNameUpdate;
+    let path = inputFile.slice(0, inputFile.indexOf('/') + 1);
+    let outputFile = path + outputName;
+    let outputFileSm = path +  outputSmName;
+    sharp(inputFile).resize(250, 330, {fit: "fill"}).toFile(outputFile).then(file => console.log("Fatto"));
+    sharp(inputFile).resize(160, 250, {fit: "fill"}).toFile(outputFileSm).then(file => console.log(file));
+    upload.array([outputFile, outputFileSm]);
+    await Item.findOne({_id: req.body.id})
+        .then(async item => {
+            fs.unlink(item.productImage, (err) => {
+                if (err) {
+                    res.status(400).send(err);
+                }
+            })
+            fs.unlink(item.productImageSm, (err) => {
+                if (err) {
+                    res.status(400).send(err);
+                }
+            })
+            console.log(item.productImage)
+            await Item.updateOne({_id: req.body.id},{$set: {
+                    name: req.body.name || item.name,
+                    colore : req.body.colore || item.colore,
+                    event : req.body.event || item.event,
+                    conf_event : req.body.conf_event || item.conf_event,
+                    description : req.body.description || item.description,
+                    productImage: outputFile || item.productImage,
+                    productImageSm: outputFileSm || item.productImageSm
+                }})
+                .then(async result => {
+                    await fs.unlink(req.file.path, function (err) {
+                        if (err) {
+                            return err
+                        }
+                        res.status(200).send(result);
+                    })
+                }).catch(err => {
+                    res.status(400).send(err);
+                })
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+})
+
 router.get('/confetti/:colore',(req,res) => {
     Item.find({$and: [{category:"Confetti"},{$or: [{colore:req.params.colore},{colore:capitalize(req.params.colore)}]}]})
         .then(items => {
@@ -109,10 +194,11 @@ router.get('/confettate/:event',(req,res) => {
 
 // @route   POST api/items
 // @desc    Create An Item
-// @access  Public 
-router.post('/',upload.single('productImage'),async (req,res) => {
+// @access  Public
+router.post('/',verify, upload.single('productImage'), async (req,res) => {
     let fileName = req.file.filename;
     let inputFile = req.file.path;
+    console.log(fileName);
     let filename = inputFile.slice(inputFile.indexOf('/') + 1,);
     let outputName = '(lg)' + fileName;
     let outputSmName = '(sm)' + fileName;
@@ -132,15 +218,34 @@ router.post('/',upload.single('productImage'),async (req,res) => {
         productImage: outputFile,
         productImageSm: outputFileSm
     });
-    await newItem.save().then(item => res.status(200).json(item)).catch(err => res.status(400).send(err));
+    await newItem.save().then(async item => {
+        await fs.unlink(req.file.path, function(err) {
+            if(err) {
+                return err
+            }
+            res.status(200).send(item);
+        })
+    }).catch(err => {
+        res.status(400).send(err);
+    })
 });
 
 // @route   DELETE api/items
 // @desc    Delete An Item
 // @access  Public 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', verify,(req, res) => {
     Item.findById(req.params.id)
         .then(item => item.remove().then(() => {
+            fs.unlink(item.productImage, (err) => {
+                if (err) {
+                    throw err;
+                }
+            });
+            fs.unlink(item.productImageSm, (err) => {
+                if (err) {
+                    throw err;
+                }
+            });
             res.json({success: true});
             console.log("Element successfully deleted from database!");
         }))

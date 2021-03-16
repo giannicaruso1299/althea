@@ -756,6 +756,10 @@ li:hover > ul.drop-menu li:nth-child(6) {
     margin-left: 1.1rem;
 }
 
+#edit, #remove {
+    cursor: pointer;
+}
+
 #ctf {
     width: 15%;
 }

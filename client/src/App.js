@@ -16,7 +16,7 @@ function App() {
         <div>
           <Switch>
             <Route path="/" exact component={HomePageCorpo}/>
-            <Route path="/areapersonale" exact render = {props => (<AddItem {...props}/>)}/>
+            <Route path="/areapersonale" exact component={AddItem}/>
             <Route path="/auth" component={Auth}/>
             <Route path="/:event" exact component={Event}/>
             <Route path="/confettate/:event" exact component={Confettate} />

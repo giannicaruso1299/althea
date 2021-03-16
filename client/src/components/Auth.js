@@ -1,91 +1,77 @@
-import React,{Component} from 'react';
+import React, {useState} from 'react';
 //import {Link} from 'react-router-dom';
 import axios from 'axios';
-import Alerta from '../alerts/Alerta';
+import AlertUser from '../alerts/AlertUser';
+import AlertPassword from "../alerts/AlertPassword";
 
-class Auth extends Component {
+function Auth() {
 
-    state = {
-        nomeUtente:"",
-        password:"",
-        allowed: false,
-        alertVisibility: false
+    const [alert, setAlert] = useState(false);
+    const [alertPassword, setAlertPassword] = useState(false);
+
+    const closeAlert = () => {
+        setAlert(false);
     }
 
-    handleUser = (e) => {
-        this.setState({
-            nomeUtente: e.target.value
-        });
-    };
+    const closeAlertPassword = () => {
+        setAlertPassword(false);
+    }
 
-    handlePass = (e) => {
-        this.setState({
-            password: e.target.value
-        });
-    };
+    const alertUser = alert ? <AlertUser closeAlert = {closeAlert}/> : '';
+    const allertPassword = alertPassword ? <AlertPassword closeAlert = {closeAlertPassword}/> : '';
 
-    checkData = (e) => {
+    const checkData = (e) => {
 
         e.preventDefault();
 
-        var body = {
-            nomeUtente:this.state.nomeUtente,
-            password:this.state.password
-        }
-
-        axios.post("http://althea-bomboniere.it:5000/api/users/findUser", body)
+        let body = {
+            nomeUtente: document.getElementById('nomeUtente').value,
+            password: document.getElementById('password').value
+        };
+        axios.post("http://althea-bomboniere.it:5000/api/users/login", body)
             .then(res => {
-                if(res.data.length > 0) {
-                    this.setState({
-                        allowed:true
-                    });
-                    this.props.history.push({
-                        pathname:"/areapersonale",
-                        state: {allowed:this.state.allowed}
-                    });
-                } else if(res.data.length === 0) {
-                    this.setState({
-                        alertVisibility: !this.state.alertVisibility
-                    })
-                }
+                    sessionStorage.setItem('token', res.data);
+                    window.location.href = '/areapersonale';
             })
             .catch(err => {
-                console.log(err);
+                if (err.response.status === 400) {
+                    if (err.response.data === 'Utente non trovato') {
+                        setAlert(true);
+                    } else if (err.response.data === 'Invalid password') {
+                        setAlertPassword(true);
+                    }
+                }
             });
     }
 
-    render() {
-        return (
-            <div className="container my-4">
-                <div className="row justify-content-center">
-                    <h1 style={{fontFamily:"sans-serif"}}>Effettua il login prima di entrare nell'area privata</h1>
-                </div>
-                <div className="row justify-content-center">
-                    {(this.state.alertVisibility) && (
-                        <Alerta/>
-                    )}
-                </div>
-                <div className="row justify-content-center">
-                    <form  onSubmit = {this.checkData}>
-                        <div className="row">
-                            <div className="input-group mb-3">
-                                <input type="text" style={{fontFamily:"sans-serif"}} className="form-control w-100" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={this.handleUser}></input>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-group mb-3">
-                                <input type="password" style={{fontFamily:"sans-serif"}} id="password" className="form-control w-100" placeholder="Password" required onChange={this.handlePass}></input>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <button className="btn btn-danger" type="submit" style={{fontFamily:"sans-serif"}}>Accedi</button>
-                        </div>
-                    </form>
-                </div>
+    return (
+        <div className="container my-4">
+            <div className="row justify-content-center">
+                <h1 style={{fontFamily:"sans-serif"}}>Effettua il login prima di entrare nell'area privata</h1>
             </div>
-        );
-    }
-
+            <div className="row justify-content-center">
+                {alertUser}
+                {allertPassword}
+            </div>
+            <div className="row justify-content-center">
+                <form onSubmit = {checkData}>
+                    <div className="row">
+                        <div className="input-group mb-3">
+                            <input type="text" style={{fontFamily:"sans-serif"}} id="nomeUtente" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="input-group mb-3">
+                            <input type="password" style={{fontFamily:"sans-serif"}} id="password" className="form-control" placeholder="Password" required/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <button className="btn btn-danger" type="submit" style={{fontFamily:"sans-serif"}}>Accedi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 }
 
 export default Auth;
