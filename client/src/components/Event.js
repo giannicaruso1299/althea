@@ -15,7 +15,7 @@ function Event(event) {
 
     const myPath = event.location.pathname.slice(1);
 
-    let path="http://althea-bomboniere.it:5000/";
+    let path="http://althea-bomboniere.it/";
     useEffect(() => {
         const fetchItems = async () => {
             await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)

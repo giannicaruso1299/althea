@@ -23,7 +23,7 @@ function AddItem() {
     const confetti = ['Bianco','Rosa','Celeste','Rosso','Colorato','Speciali'];
     const confettate = ['Laurea','Battesimo','Compleanno','Matrimonio'];
 
-    let path="http://althea-bomboniere.it:5000/";
+    let path="http://althea-bomboniere.it/";
 
     const handleFile = (e) => {
         const fullFile = e.target.files[0];
