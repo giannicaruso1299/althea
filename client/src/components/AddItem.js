@@ -9,7 +9,7 @@ import {Modal, ModalBody, ModalHeader, Form, FormGroup, Col, Label, Input, Butto
 import Loader from "react-loader-spinner";
 
 function AddItem() {
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useState(false)   ;
     const [unauthoraized, setUnauthorized] = useState(false);
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -49,6 +49,26 @@ function AddItem() {
     const confetti = ['Bianco','Rosa','Celeste','Rosso','Colorato','Speciali'];
     const confettate = ['Laurea','Battesimo','Compleanno','Matrimonio'];
 
+    const populateOptions = (e) => {
+        const target = e.target.value;
+        const selection = categories.indexOf(target);
+        if (selection === 1) {
+            document.getElementById('confetti').classList.remove('d-none');
+            document.getElementById('eventi').classList.add('d-none');
+            document.getElementById('confettate').classList.add('d-none');
+        } else if (selection === 2) {
+            document.getElementById('confettate').classList.remove('d-none');
+            document.getElementById('confetti').classList.add('d-none');
+            document.getElementById('eventi').classList.add('d-none');
+        } else {
+            document.getElementById('eventi').classList.remove('d-none');
+            document.getElementById('confetti').classList.add('d-none');
+            document.getElementById('confettate').classList.add('d-none');
+        }
+        console.log(selection);
+    }
+
+
     const handleFile = (e) => {
 
         const fullFile = e.target.files[0];
@@ -84,25 +104,6 @@ function AddItem() {
                 console.log(err);
             });
     };
-
-    const populateOptions = (e) => {
-        const target = e.target.value;
-        const selection = this.categories.indexOf(target);
-        if (selection === 1) {
-            document.getElementById('confetti').classList.remove('d-none');
-            document.getElementById('eventi').classList.add('d-none');
-            document.getElementById('confettate').classList.add('d-none');
-        } else if (selection === 2) {
-            document.getElementById('confettate').classList.remove('d-none');
-            document.getElementById('confetti').classList.add('d-none');
-            document.getElementById('eventi').classList.add('d-none');
-        } else {
-            document.getElementById('eventi').classList.remove('d-none');
-            document.getElementById('confetti').classList.add('d-none');
-            document.getElementById('confettate').classList.add('d-none');
-        }
-    }
-
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItem = items.slice(indexOfFirstItem, indexOfLastItem);
