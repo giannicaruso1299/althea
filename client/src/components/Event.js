@@ -11,7 +11,7 @@ function Event(event) {
     const [loaded, setLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(4);
+    const [itemsPerPage] = useState(12);
 
     const myPath = event.location.pathname.slice(1);
 
