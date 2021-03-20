@@ -11,7 +11,7 @@ function Event(event) {
     const [loaded, setLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(12);
+    const [itemsPerPage] = useState(4);
 
     const myPath = event.location.pathname.slice(1);
 
@@ -20,22 +20,26 @@ function Event(event) {
         const fetchItems = async () => {
             await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
                 .then(res => {
-                    setItems(res.data);
                     setLoaded(true);
+                    setItems(res.data);
                 })
                 .catch(err => {
                     console.log(err);
                 });
         }
-        fetchItems().then(r => console.log("Fatto"))
+        const firstLetter = myPath.slice(0,1);
+        const restOfWord = myPath.slice(1,);
+        const path_capitalized = firstLetter.toUpperCase() + restOfWord;
+        document.title = 'Althea Bomboniere | ' + path_capitalized;
+        fetchItems().then(() => console.log("Fatto"))
       },[event.location.pathname, myPath]);
 
     const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage
     const currentItem = items.slice(indexOfFirstItem, indexOfLastItem);
 
     const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber)
+        setCurrentPage(pageNumber);
     }
 
     return (

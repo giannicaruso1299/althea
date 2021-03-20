@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 //import {Link} from 'react-router-dom';
 import axios from 'axios';
 import AlertUser from '../alerts/AlertUser';
@@ -8,6 +8,10 @@ function Auth() {
 
     const [alert, setAlert] = useState(false);
     const [alertPassword, setAlertPassword] = useState(false);
+
+    useEffect(() => {
+        document.title = 'Althea Bomboniere | Login';
+    })
 
     const closeAlert = () => {
         setAlert(false);

@@ -30,6 +30,7 @@ function Confetti(colore) {
                     console.log(err)
                 })
         }
+        document.title = 'Althea Bomboniere | Confetti';
         fetchItems().then(() => console.log("fatto"));
     },[colore.location.pathname, myPath]);
 

@@ -8,12 +8,29 @@ html, body {
     color: brown;
 }
 
-/*#carousel-container:hover {*/
-/*    margin: 0 auto;*/
-/*    width: 60%;*/
-/*    max-height: 110%;*/
-/*    transition: ease-in .2s;*/
-/*}*/
+.pagination {
+    font-family: "Open Sans", sans-serif;
+}
+
+.page-item {
+    width: 3.5%;
+    height: 50%;
+    border: transparent !important;
+    box-shadow: 5px 7px 6px 4px black;
+    border-radius: 50%;
+}
+
+.page-link:hover {
+    background-color: brown !important;
+    color: white !important;
+}
+
+.page-link {
+    color: black !important;
+    cursor: pointer;
+    border-radius: 50% !important;
+    border: transparent !important;
+}
 
 #myFooter {
     background-color: #eee;
@@ -279,24 +296,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
     }
 }
 
-/*#section {*/
-/*height: auto;*/
-/*}*/
-
-/*#sidebar {*/
-/*    height: 350px;*/
-/*    background-color: grey;*/
-/*}*/
-
-/*.image {*/
-/*    max-width: 100%;*/
-/*}*/
-
-/*#body {*/
-/*    position: relative;*/
-/*    top: 320px;*/
-/*}*/
-
 .fa-plus-circle {
     color: brown;
 }
@@ -304,10 +303,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
 .fa-minus-circle {
     color: brown;
 }
-
-/*.mt-6 {*/
-/*    margin-top: 4rem;*/
-/*}*/
 
 #menu {
     color: #C91E1E;
@@ -335,23 +330,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
     animation: logo 5s forwards;
 }
 
-/*.pb-6 {*/
-/*    padding-bottom: 6rem;*/
-/*}*/
-
-/*.pl-6 {*/
-/*    padding-left: 6rem;*/
-/*}*/
-
-/*#posLink {*/
-/*    color: brown;*/
-/*}*/
-
-/*#posLink:hover {*/
-/*    text-decoration: none;*/
-/*    color: black;*/
-/*    transition: .2s ease-in;*/
-/*}*/
 /*!*lg*!*/
 @media screen and (min-width: 992px) and (max-width: 1023px) {
 
@@ -377,67 +355,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
     }
 
 }
-/*@media screen and (min-width: 992px) and (max-width: 1024px) {*/
 
-/*    #corpo {*/
-/*        position: absolute;*/
-/*        z-index: 0;*/
-/*        top: 750px;*/
-/*    }*/
-
-
-/*    ul.drop-menu li a {*/
-/*        display: block;*/
-/*        color: white;*/
-/*        background-color: brown;*/
-/*        margin-top: 0.7em;*/
-/*    }*/
-
-/*    #items {*/
-/*        background-color: white;*/
-/*    }*/
-
-/*    #footer {*/
-/*        position: absolute;*/
-/*        z-index: 0;*/
-/*        width: 100%;*/
-/*        top: 2000px;*/
-/*    }*/
-
-/*    #logo-1st {*/
-/*        position: absolute;*/
-/*        z-index: 2;*/
-/*        !*background-color: red;*!*/
-/*        height: 100px;*/
-/*    }*/
-
-/*    #myLinks ul li a {*/
-/*        color: white;*/
-/*    }*/
-
-/*    #body-resp {*/
-/*        position: relative;*/
-/*        top: 450px;*/
-/*    }*/
-
-/*    .ml-6 {*/
-/*        margin-left: 4.5rem;*/
-/*    }*/
-
-/*    #logo {*/
-/*        margin-left: 18rem;*/
-/*        width: 35%;*/
-/*    }*/
-
-/*    #navigation {*/
-/*        margin-top: 7rem;*/
-/*    }*/
-
-/*    .w-5 {*/
-/*        width:5%;*/
-/*    }*/
-/*}*/
-/*xl*/
 @media screen and (min-width: 1024px) {
 
     html {
@@ -488,93 +406,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
     }
 }
 
-/*!*xl*!*/
-/*@media screen and (min-width: 1025px) {*/
-/*    #position {*/
-/*        padding-top: 2rem;*/
-/*        font-size: 4vh;*/
-/*    }*/
-
-/*    !*.seguicisu {*!*/
-/*    !*    position: absolute;*!*/
-/*    !*    top: 55px;*!*/
-/*    !*    left: 900px;*!*/
-/*    !*}*!*/
-
-/*    .navbar-motto {*/
-/*        color: brown;*/
-/*        margin-top: 10rem;*/
-/*        font-weight: 700;*/
-/*        font-size: 50px;*/
-/*    }*/
-
-/*    ul.drop-menu li a {*/
-/*        display: block;*/
-/*        color: white;*/
-/*        background-color: brown;*/
-/*        margin-top: 0.7em;*/
-/*    }*/
-/*    }*/
-
-/*    #section {*/
-/*        height: auto;*/
-/*    }*/
-
-/*    #items {*/
-/*        color: white;*/
-/*    }*/
-
-
-/*    #sidebar {*/
-/*        height: 350px;*/
-/*        background-color: grey;*/
-/*    }*/
-
-/*    .image {*/
-/*        max-width: 100%;*/
-/*    }*/
-
-/*    #body {*/
-/*        position: relative;*/
-/*        top: 320px;*/
-/*    }*/
-
-/*    #corpo {*/
-/*        position: absolute;*/
-/*        z-index: 0;*/
-/*        top: 750px;*/
-/*    }*/
-
-/*    #logo-1st {*/
-/*        position: absolute;*/
-/*        z-index: 2;*/
-/*        !*background-color: red;*!*/
-/*        height: 100px;*/
-/*    }*/
-
-/*    #footer {*/
-/*        position: absolute;*/
-/*        z-index: -1000;*/
-/*        width: 100%;*/
-/*        !*top: 2000px;*!*/
-/*    }*/
-
-/*    #logo {*/
-/*        width: 65%;*/
-/*        margin-left: 80px;*/
-/*    }*/
-
-/*    #logo-1st {*/
-/*        position: relative;*/
-/*        z-index: 2;*/
-/*        !*background-color: red;*!*/
-/*        height: 150px;*/
-/*    }*/
-
-/*    .w-5 {*/
-/*        width:5%;*/
-/*    }*/
-
 /*!*md*!*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .flip-card-back {
@@ -585,58 +416,6 @@ li:hover > ul.drop-menu li:nth-child(6) {
         max-height: 330px;
     }
 }
-/*@media screen and (min-width: 768px) and (max-width: 991px) {*/
-
-/*    #corpo {*/
-/*        position: absolute;*/
-/*        top: 600px;*/
-/*        z-index: 0;*/
-/*    }*/
-
-/*    .navbar-motto {*/
-/*        color: brown;*/
-/*        margin-top: 10rem;*/
-/*        font-weight: 700;*/
-/*        font-size: 50px;*/
-/*    }*/
-
-/*    ul.drop-menu li a {*/
-/*        display: block;*/
-/*        color: white;*/
-/*        background-color: brown;*/
-/*        margin-top: 0.7em;*/
-/*    }*/
-
-/*    #logo-1st {*/
-/*        position: absolute;*/
-/*        z-index: 2;*/
-/*        !*background-color: red;*!*/
-/*        height: 100px;*/
-/*    }*/
-
-/*    #logo {*/
-/*        margin-left: 10rem;*/
-/*        width: 40%;*/
-/*    }*/
-
-/*    #body-resp {*/
-/*        position: relative;*/
-/*        top: 450px;*/
-/*    }*/
-
-/*    #footer {*/
-/*        position: absolute;*/
-/*        z-index: 2;*/
-/*        !*width: 100%;*!*/
-/*        top: 2000px;*/
-/*        height: 194.45px;*/
-/*    }*/
-
-/*    #navigation {*/
-/*        margin-top: 7rem;*/
-/*    }*/
-
-/*}*/
 
 /*!*sm*!*/
 @media screen and (min-width: 360px) and (max-width: 767px) {
@@ -649,6 +428,19 @@ li:hover > ul.drop-menu li:nth-child(6) {
         max-width: 160px;
         max-height: 250px;
         box-shadow: 0 10px 20px black;
+    }
+    .pagination {
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .page-item {
+        width: 14%;
+        border: transparent !important;
+    }
+    .page-link {
+        color: black !important;
+        cursor: pointer;
+        border: transparent !important;
     }
     #navbar-motto {
         padding-top: 80px;

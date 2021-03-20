@@ -35,6 +35,7 @@ function Confettate(event) {
         const myEvent = capFirstWord + wordSplitted;
         const fullString = "Le nostre confettate per " + myEvent;
         setTitle(fullString);
+        document.title = 'Althea Bomboniere | Confettate';
         fetchItems().then(() => console.log("Fatto"));
     },[event.location.pathname]);
 
