@@ -9,7 +9,7 @@ import {Modal, ModalBody, ModalHeader, Form, FormGroup, Col, Label, Input, Butto
 import Loader from "react-loader-spinner";
 
 function AddItem() {
-    const [modal, setModal] = useState(false)   ;
+    const [modal, setModal] = useState(false);
     const [unauthoraized, setUnauthorized] = useState(false);
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
