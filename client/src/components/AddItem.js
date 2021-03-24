@@ -16,35 +16,16 @@ function AddItem() {
     const [itemsPerPage] = useState(4);
     const [file, setFile] = useState('');
     const [noElement, setNoElement] = useState(false);
-    const [loaded, setLoaded] = useState(false);
+    const [loaded, setLoaded] = useState(true);
+    const [modalError, setModalError] = useState(false);
 
     let path="http://althea-bomboniere.it:5000/";
 
     useEffect(() => {
-        fetchItems().then(() => console.log("Fatto"));
         document.title = 'Althea Bomboniere | Area Personale';
     },[]);
 
-    const fetchItems = async () => {
-        await axios.get('http://althea-bomboniere.it:5000/api/items', {headers: {'auth-token': sessionStorage.getItem('token')}})
-            .then(res => {
-                setLoaded(true);
-                setItems(res.data);
-            })
-            .catch(err => {
-                if (err.response.status === 400) {
-                    if (err.response.data === 'Nessun elemento') {
-                        setLoaded(true);
-                        setNoElement(true);
-                    } else {
-                        setLoaded(true);
-                        setUnauthorized(true)
-                    }
-                }
-            })
-    }
-
-    const categories = ["Eventi","Confetti","Confettate"];
+    const categories = ["Eventi","Confetti","Confettate","Portaciuccio"];
     const events = ['Nascita','Battesimo','Compleanno','Comunione','Cresima','Laurea','Matrimonio'];
     const confetti = ['Bianco','Rosa','Celeste','Rosso','Colorato','Speciali'];
     const confettate = ['Laurea','Battesimo','Compleanno','Matrimonio'];
@@ -65,7 +46,6 @@ function AddItem() {
             document.getElementById('confetti').classList.add('d-none');
             document.getElementById('confettate').classList.add('d-none');
         }
-        console.log(selection);
     }
 
 
@@ -101,9 +81,104 @@ function AddItem() {
                 setModal(true);
             })
             .catch(err => {
-                console.log(err);
+                setModalError(true);
             });
     };
+
+    const getEventiItems = async (e) => {
+        setNoElement(false);
+        setItems([]);
+        setLoaded(false);
+        const myPath = e.target.getAttribute('data-event');
+        await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
+            .then(res => {
+                setLoaded(true);
+                setItems(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+                if (err.response.status === 400) {
+                    if (err.response.data === 'Nessun elemento') {
+                        setLoaded(true);
+                        setNoElement(true);
+                    } else {
+                        setLoaded(true);
+                        setUnauthorized(true)
+                    }
+                }
+            });
+    }
+
+    const getConfettiColore = async (e) => {
+        setNoElement(false);
+        setItems([]);
+        setLoaded(false);
+        const myPath = e.target.getAttribute('data-event');
+        await axios.get("http://althea-bomboniere.it:5000/api/items/confetti/" + myPath)
+            .then(res => {
+                setLoaded(true);
+                setItems(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+                if (err.response.status === 400) {
+                    if (err.response.data === 'Nessun elemento') {
+                        setLoaded(true);
+                        setNoElement(true);
+                    } else {
+                        setLoaded(true);
+                        setUnauthorized(true)
+                    }
+                }
+            });
+    }
+
+    const getConfettateEvent = async (e) => {
+        setNoElement(false);
+        setItems([]);
+        setLoaded(false);
+        const myPath = e.target.getAttribute('data-event');
+        await axios.get("http://althea-bomboniere.it:5000/api/items/confettate/" + myPath)
+            .then(res => {
+                setLoaded(true);
+                setItems(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+                if (err.response.status === 400) {
+                    if (err.response.data === 'Nessun elemento') {
+                        setLoaded(true);
+                        setNoElement(true);
+                    } else {
+                        setLoaded(true);
+                        setUnauthorized(true)
+                    }
+                }
+            });
+    }
+
+    const getPortaciuccio = async (e) => {
+        setNoElement(false);
+        setItems([]);
+        setLoaded(false);
+        await axios.get("http://althea-bomboniere.it:5000/api/items/portaciuccio")
+            .then(res => {
+                setLoaded(true);
+                setItems(res.data);
+            })
+            .catch(err => {
+                if (err.response.status === 400) {
+                    if (err.response.data === 'Nessun elemento') {
+                        setLoaded(true);
+                        setNoElement(true);
+                    } else {
+                        setLoaded(true);
+                        setUnauthorized(true)
+                    }
+                }
+            });
+    }
+
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItem = items.slice(indexOfFirstItem, indexOfLastItem);
@@ -119,7 +194,7 @@ function AddItem() {
     };
 
     return (
-        <div className="container-fluid" style={{fontFamily:"sans-serif"}}>
+        <div className="container-fluid" style={{fontFamily:"Open Sans"}}>
             <div className="text-center mt-2">
                 {unauthoraized && (
                     <h1>Non sei autorizzato ad entrare in quest'area</h1>
@@ -128,15 +203,136 @@ function AddItem() {
             {!unauthoraized && (
                 <div>
                     <h2 className="text-center">I tuoi articoli</h2>
-                    {!loaded && (
-                        <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
-                    )}
-                    {noElement && (
-                        <h4 className="text-center">Non hai nessun articolo</h4>
-                    )}
-                    <ItemCard items={currentItem} path={path}/>
-                    <Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>
-                    <h3 className="text-center">Inserisci un nuovo articolo</h3>
+                    <div className="row mt-5">
+                        <div className="btn-group" role="group">
+                            <button
+                                className="btn btn-primary"
+                                data-bs-toggle="collapse"
+                                href="#eventi"
+                                aria-expanded="false"
+                                aria-controls="multiCollapseExample1">Eventi
+                            </button>
+                            <button
+                                className="btn btn-primary"
+                                data-bs-toggle="collapse"
+                                href="#confetti"
+                                aria-expanded="false"
+                                aria-controls="multiCollapseExample1">Confetti
+                            </button>
+                            <button
+                                className="btn btn-primary"
+                                data-bs-toggle="collapse"
+                                href="#confettate"
+                                aria-expanded="false"
+                                aria-controls="multiCollapseExample1">Confettate
+                            </button>
+                            <button
+                                className="btn btn-primary"
+                                data-bs-toggle="collapse"
+                                href="#portaciuccio"
+                                onClick={getPortaciuccio}
+                                aria-expanded="false"
+                                aria-controls="multiCollapseExample1">Portaciuccio
+                            </button>
+                        </div>
+                        <div className="row mt-2">
+                            <div className="collapse multi-collapse text-center" id="eventi">
+                                <div className="btn-group" role="group">
+                                    {events.map(event => (
+                                        <button
+                                            className="btn btn-success"
+                                            data-event={event.toLowerCase()}
+                                            onClick={getEventiItems}
+                                            data-bs-toggle="collapse"
+                                            href={"#events" + event}
+                                            aria-expanded="false">{event}
+                                        </button>
+                                    ))}
+                                </div>
+                                {events.map(event => (
+                                    <div className="collapse multi-collapse" id={'events' + event}>
+                                        {!loaded && (
+                                            <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
+                                        )}
+                                        {noElement && (
+                                            <h4 className="text-center mt-2">Non hai nessun articolo</h4>
+                                        )}
+                                        <ItemCard className="collapse multi-collapse" items={currentItem} path={path} edit={true}/>
+                                        <Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="row mt-2">
+                            <div className="collapse multi-collapse text-center" id="confetti">
+                                <div className="btn-group" role="group">
+                                    {confetti.map(confetto => (
+                                        <button
+                                            className="btn btn-success"
+                                            data-event={confetto.toLowerCase()}
+                                            onClick={getConfettiColore}
+                                            data-bs-toggle="collapse"
+                                            href={"#confetti" + confetto}
+                                            aria-expanded="false">{confetto}
+                                        </button>
+                                    ))}
+                                </div>
+                                {confetti.map(confetto => (
+                                    <div className="collapse multi-collapse" id={'confetti' + confetto}>
+                                        {!loaded && (
+                                            <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
+                                        )}
+                                        {noElement && (
+                                            <h4 className="text-center mt-2">Non hai nessun articolo</h4>
+                                        )}
+                                        <ItemCard className="collapse multi-collapse" items={currentItem} path={path} edit={true}/>
+                                        <Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="row mt-2">
+                            <div className="collapse multi-collapse text-center" id="confettate">
+                                <div className="btn-group" role="group">
+                                    {confettate.map(confettata => (
+                                        <button
+                                            className="btn btn-success"
+                                            data-event={confettata.toLowerCase()}
+                                            onClick={getConfettateEvent}
+                                            data-bs-toggle="collapse"
+                                            href={"#confettate" + confettata}
+                                            aria-expanded="false">{confettata}
+                                        </button>
+                                    ))}
+                                </div>
+                                {confettate.map(confettata => (
+                                    <div className="collapse multi-collapse" id={'confettate' + confettata}>
+                                        {!loaded && (
+                                            <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
+                                        )}
+                                        {noElement && (
+                                            <h4 className="text-center mt-2">Non hai nessun articolo</h4>
+                                        )}
+                                        <ItemCard className="collapse multi-collapse" items={currentItem} path={path} edit={true}/>
+                                        <Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="row mt-3 justify-content-center">
+                            <div className="collapse multi-collapse" id='portaciuccio'>
+                                {!loaded && (
+                                    <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
+                                )}
+                                {noElement && (
+                                    <h4 className="text-center mt-2">Non hai nessun articolo</h4>
+                                )}
+                                <ItemCard className="collapse multi-collapse" items={currentItem} path={path} edit={true}/>
+                                <Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 className="text-center mb-4">Inserisci un nuovo articolo</h3>
                     <Form>
                         <FormGroup row>
                             <Label for="exampleEmail" sm={2}>Nome Oggetto</Label>
@@ -203,6 +399,17 @@ function AddItem() {
                                     <ModalHeader toggle={toggle}>Articolo inserito!</ModalHeader>
                                     <ModalBody>
                                         Articolo correttamente inserito!
+                                    </ModalBody>
+                                </Modal>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup check row>
+                            <Col sm={{ size: 10, offset: 2 }} className="text-center mb-sm-0 mb-3">
+                                <Button color="danger" onClick={fileUploadHandler}>Aggiungi</Button>
+                                <Modal isOpen={modalError} toggle={toggle}>
+                                    <ModalHeader toggle={toggle}>Errore</ModalHeader>
+                                    <ModalBody>
+                                        Errore nell'inserimento dell'articolo
                                     </ModalBody>
                                 </Modal>
                             </Col>

@@ -73,10 +73,11 @@ router.get('/:event',(req,res) => {
     Item.find({$and: [{category:"Eventi"},{$or: [{event:req.params.event},{event:capitalize(req.params.event)}]}]})
         .then(items => {
             if(items.length === 0) {
-                console.log(`${req.params.event}: no elements in database`);
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.json(items);
             }
-            res.json(items);
-            console.log(`${req.params.event}: elements in db:`);
+            console.log("Elements in db: ");
             items.forEach(item => {
                 console.log(item.name);
             });
@@ -170,9 +171,10 @@ router.get('/confetti/:colore',(req,res) => {
     Item.find({$and: [{category:"Confetti"},{$or: [{colore:req.params.colore},{colore:capitalize(req.params.colore)}]}]})
         .then(items => {
             if(items.length === 0) {
-                console.log(`${req.params.event}: no elements in database`);
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.json(items);
             }
-            res.json(items);
             console.log(`${req.params.event}: elements in db:`);
             items.forEach(item => {
                 console.log(item.name);
@@ -184,15 +186,31 @@ router.get('/confettate/:event',(req,res) => {
     Item.find({$and: [{category:"Confettate"},{$or: [{conf_event:req.params.event},{conf_event:capitalize(req.params.event)}]}]})
         .then(items => {
             if(items.length === 0) {
-                console.log(`${req.params.event}: no elements in database`);
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.json(items);
             }
-            res.json(items);
             console.log(`${req.params.event}: elements in db:`);
             items.forEach(item => {
                 console.log(item.name);
             });
         });
-});
+})
+
+router.get('/portaciuccio', (req, res) => {
+    Item.find({category:"Portaciuccio"})
+        .then(items => {
+            if (items.length === 0) {
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.json(items);
+            }
+            console.log(`Portaciuccio: elements in db:`);
+            items.forEach(item => {
+                console.log(item.name);
+            });
+        })
+})
 
 // @route   POST api/items
 // @desc    Create An Item

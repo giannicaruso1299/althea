@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Modal, ModalBody, ModalHeader} from "reactstrap";
 
-function ItemCard({items, path}) {
+function ItemCard({items, path, edit, noElement, loaded}) {
 
     const [formModalEdit, setFormModalEdit] = useState(false);
     const [modalEdited, setModalEdited] = useState(false);
@@ -16,6 +16,8 @@ function ItemCard({items, path}) {
         const fullFile = e.target.files[0];
         setFile(fullFile);
     };
+
+    let width = window.innerWidth;
 
     const handleModalConfirmDelete = () => {
         setModalConfirmDelete(true);
@@ -142,24 +144,30 @@ function ItemCard({items, path}) {
     }
 
     return (
-        <div className="row mb-4" style={{fontFamily:"sans-serif"}}>
+        <div className="row mb-5 d-flex flex-row" style={{fontFamily:"Open Sans"}}>
             {items.map(item => (
-                <div className="col-md-3 col-6">
-                    <div className="card w-sm-75">
-                        <img src={path + item.productImage} className="card-img-top" alt={item.name}/>
-                        <div className="card-body">
-                            <h4 className="card-title">{item.name}</h4>
-                            <hr/>
-                            <div className="row">
-                                <div className="col-6">
-                                    <small className="card-text float-left">{item.description}</small>
-                                </div>
-                                <div className="col-6">
-                                    <div className="float-right">
+                <div className="col-md-3 col-6 my-3 justify-content-md-center">
+                    <div className="flip-card mx-auto">
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front">
+                                {width >= 768 && (
+                                    <img src={path + item.productImage} alt={item.name}/>
+                                )}
+                                {width < 768 && (
+                                    <img src={path + item.productImageSm} className="w-100" alt={item.name}/>
+                                )}
+                            </div>
+                            <div className="flip-card-back">
+                                <p className="lead font-weight-bold">{item.name}</p>
+                                <hr className="mx-3"/>
+                                <small className="lead">{item.description}</small>
+                                {edit && (
+                                    <div className="text-center mt-2">
                                         <i className="fas fa-pencil-alt mr-2" id="edit" data-value={item._id} onClick={handleFormModalEdit}/>
                                         <i className="fas fa-trash" id="remove" onClick={handleModalConfirmDelete}/>
                                     </div>
-                                </div>
+
+                                )}
                             </div>
                         </div>
                     </div>
