@@ -13,7 +13,7 @@ function AddItem() {
     const [unauthoraized, setUnauthorized] = useState(false);
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(4);
+    const [itemsPerPage] = useState(8);
     const [file, setFile] = useState('');
     const [noElement, setNoElement] = useState(false);
     const [loaded, setLoaded] = useState(true);
@@ -204,7 +204,7 @@ function AddItem() {
                 <div>
                     <h2 className="text-center">I tuoi articoli</h2>
                     <div className="row mt-5">
-                        <div className="btn-group" role="group">
+                        <div className="btn-group flex-wrap" role="group">
                             <button
                                 className="btn btn-primary"
                                 data-bs-toggle="collapse"
@@ -237,9 +237,10 @@ function AddItem() {
                         </div>
                         <div className="row mt-2">
                             <div className="collapse multi-collapse text-center" id="eventi">
-                                <div className="btn-group" role="group">
+                                <div className="btn-group flex-wrap" role="group">
                                     {events.map(event => (
                                         <button
+                                            key={event}
                                             className="btn btn-success"
                                             data-event={event.toLowerCase()}
                                             onClick={getEventiItems}
@@ -250,7 +251,7 @@ function AddItem() {
                                     ))}
                                 </div>
                                 {events.map(event => (
-                                    <div className="collapse multi-collapse" id={'events' + event}>
+                                    <div className="collapse multi-collapse" id={'events' + event} key={event}>
                                         {!loaded && (
                                             <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
                                         )}
@@ -265,9 +266,10 @@ function AddItem() {
                         </div>
                         <div className="row mt-2">
                             <div className="collapse multi-collapse text-center" id="confetti">
-                                <div className="btn-group" role="group">
+                                <div className="btn-group flex-wrap" role="group">
                                     {confetti.map(confetto => (
                                         <button
+                                            key={confetto}
                                             className="btn btn-success"
                                             data-event={confetto.toLowerCase()}
                                             onClick={getConfettiColore}
@@ -278,7 +280,7 @@ function AddItem() {
                                     ))}
                                 </div>
                                 {confetti.map(confetto => (
-                                    <div className="collapse multi-collapse" id={'confetti' + confetto}>
+                                    <div className="collapse multi-collapse" id={'confetti' + confetto} key={confetto}>
                                         {!loaded && (
                                             <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
                                         )}
@@ -293,9 +295,10 @@ function AddItem() {
                         </div>
                         <div className="row mt-2">
                             <div className="collapse multi-collapse text-center" id="confettate">
-                                <div className="btn-group" role="group">
+                                <div className="btn-group flex-wrap" role="group">
                                     {confettate.map(confettata => (
                                         <button
+                                            key={confettata}
                                             className="btn btn-success"
                                             data-event={confettata.toLowerCase()}
                                             onClick={getConfettateEvent}
@@ -306,7 +309,7 @@ function AddItem() {
                                     ))}
                                 </div>
                                 {confettate.map(confettata => (
-                                    <div className="collapse multi-collapse" id={'confettate' + confettata}>
+                                    <div className="collapse multi-collapse" id={'confettate' + confettata} key={confettata}>
                                         {!loaded && (
                                             <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
                                         )}
@@ -405,7 +408,6 @@ function AddItem() {
                         </FormGroup>
                         <FormGroup check row>
                             <Col sm={{ size: 10, offset: 2 }} className="text-center mb-sm-0 mb-3">
-                                <Button color="danger" onClick={fileUploadHandler}>Aggiungi</Button>
                                 <Modal isOpen={modalError} toggle={toggle}>
                                     <ModalHeader toggle={toggle}>Errore</ModalHeader>
                                     <ModalBody>

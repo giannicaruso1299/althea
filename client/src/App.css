@@ -26,6 +26,7 @@ html, body {
 }
 
 .page-link {
+    width: 100%;
     color: black !important;
     cursor: pointer;
     border-radius: 50% !important;
@@ -187,7 +188,6 @@ ul.drop-menu {
 .flip-card-inner {
     position: relative;
     width: 100%;
-    text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
     box-shadow: 0 10px 20px black;
@@ -353,13 +353,37 @@ li:hover > ul.drop-menu li:nth-child(6) {
     .carousel-item {
         max-width: 300px;
     }
-
+    .flip-card-inner {
+        max-height: 200px;
+    }
+    .flip-card-back {
+        bottom: 200px;
+    }
+    .page-item {
+        width: 14%;
+        border: transparent !important;
+    }
+    .page-link {
+        color: black !important;
+        cursor: pointer;
+        border: transparent !important;
+    }
 }
 
 @media screen and (min-width: 1024px) {
 
     html {
         min-height: 1000px;
+    }
+
+    .page-item {
+        width: 3%;
+        border: transparent !important;
+    }
+    .page-link {
+        color: black !important;
+        cursor: pointer;
+        border: transparent !important;
     }
 
     .flip-card-back {
@@ -377,6 +401,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
     .flip-card {
         max-width: 250px;
         max-height: 330px;
+        margin: 0 auto;
     }
 
     #logo {
@@ -412,8 +437,31 @@ li:hover > ul.drop-menu li:nth-child(6) {
         bottom: 320px;
     }
     .flip-card-inner {
+        max-width: 200px;
+        max-height: 300px;
+    }
+    .page-item {
+        width: 5%;
+        border: transparent !important;
+    }
+    .page-link {
+        color: black !important;
+        cursor: pointer;
+        border: transparent !important;
+    }
+    .flip-card {
+        margin: 0 auto;
+        width: 250px;
+        height: 330px;
         max-width: 250px;
         max-height: 330px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    #description_item {
+        font-size: 1.25rem;
+        font-weight: 300;
     }
 }
 
@@ -429,12 +477,8 @@ li:hover > ul.drop-menu li:nth-child(6) {
         max-height: 250px;
         box-shadow: 0 10px 20px black;
     }
-    .pagination {
-        font-family: "Open Sans", sans-serif;
-    }
-
     .page-item {
-        width: 14%;
+        width: 7%;
         border: transparent !important;
     }
     .page-link {
@@ -471,60 +515,9 @@ li:hover > ul.drop-menu li:nth-child(6) {
 }
 @media screen and (min-width: 300px) and (max-width: 767px) {
 
-/*    #corpo {*/
-/*        position: absolute;*/
-/*        top: 950px;*/
-/*        z-index: 0;*/
-/*    }*/
-
-/*    .seguicisu {*/
-/*        position: absolute;*/
-/*        top: 450px;*/
-/*        left: 140px;*/
-/*        color: brown;*/
-/*    }*/
-
-/*    .navbar-motto {*/
-/*        color: brown;*/
-/*        margin-top: 10rem;*/
-/*        font-weight: 700;*/
-/*        font-size: 40px;*/
-/*    }*/
-
-/*    #navigation {*/
-/*        margin-top: 11rem;*/
-/*    }*/
-
     #myLinks ul li a {
         color: black;
     }
-
-/*    #logo-1st {*/
-/*        position: absolute;*/
-/*        z-index: 2;*/
-/*        !*background-color: red;*!*/
-/*        height: 100px;*/
-/*    }*/
-
-/*    #body-resp {*/
-/*        position: relative;*/
-/*        top: 560px;*/
-/*    }*/
-
-/*    #logo {*/
-/*        width: 60%;*/
-/*        margin-left: 80px;*/
-/*        margin-top: 60px;*/
-/*    }*/
-
-/*    #footer {*/
-/*        position: absolute;*/
-/*        z-index: 2;*/
-/*        !*width: 100%;*!*/
-/*        top: 1000px;*/
-/*        height: 600px;*/
-/*    }*/
-
     .g-maps {
         width: 30%;
     }
@@ -555,11 +548,5 @@ li:hover > ul.drop-menu li:nth-child(6) {
 #ctf {
     width: 15%;
 }
-
-/*@font-face {*/
-/*    font-family: 'shelley_allegro';*/
-/*    src: url('./font/34460_SHAL____.ttf') format('truetype');;*/
-/*}*/
-
 
 /*.row > div { border:1px solid blue;}*/

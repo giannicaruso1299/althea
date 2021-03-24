@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import {Modal, ModalBody, ModalHeader} from "reactstrap";
 
@@ -146,8 +146,8 @@ function ItemCard({items, path, edit, noElement, loaded}) {
     return (
         <div className="row mb-5 d-flex flex-row" style={{fontFamily:"Open Sans"}}>
             {items.map(item => (
-                <div className="col-md-3 col-6 my-3 justify-content-md-center">
-                    <div className="flip-card mx-auto">
+                <div className="col-md-6 col-lg-3 col-6 my-3 text-center" key={item._id}>
+                    <div className="flip-card" style={{margin: "0 auto"}}>
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
                                 {width >= 768 && (
@@ -235,7 +235,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
                                         <label className="form-label">Evento</label>
                                         <select className="form-select" id="evento" placeholder={item.event}>
                                             {events.map(event => (
-                                                <option>{event}</option>
+                                                <option key={event}>{event}</option>
                                             ))}
                                         </select>
                                     </div>
@@ -245,7 +245,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
                                         <label className="form-label">Colore</label>
                                         <select className="form-select" id="colore" placeholder={item.colore}>
                                             {confetti.map(colore => (
-                                                <option>{colore}</option>
+                                                <option key={colore}>{colore}</option>
                                             ))}
                                         </select>
                                     </div>
@@ -255,7 +255,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
                                         <label className="form-label">Evento</label>
                                         <select className="form-select" id="conf_event" placeholder={item.conf_event}>
                                             {confettate.map(evento => (
-                                                <option>{evento}</option>
+                                                <option key={evento}>{evento}</option>
                                             ))}
                                         </select>
                                     </div>
