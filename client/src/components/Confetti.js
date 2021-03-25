@@ -14,14 +14,14 @@ function Confetti(colore) {
     const [itemsPerPage] = useState(12);
     const [noItems, setNoItems] = useState(false);
 
-    let path="http://althea-bomboniere.it:5000/";
+    let path="//althea-bomboniere.it:5000/";
 
     const myPath = colore.location.pathname.slice(1);
     const purifiedColor = myPath.slice(myPath.indexOf('/') + 1);
 
     useEffect(() => {
         const fetchItems = async () => {
-            const path = "http://althea-bomboniere.it:5000/api/items/" + myPath;
+            const path = "//althea-bomboniere.it:5000/api/items/" + myPath;
             await axios.get(path)
                 .then(res => {
                     setItems(res.data)

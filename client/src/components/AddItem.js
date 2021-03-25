@@ -19,7 +19,7 @@ function AddItem() {
     const [loaded, setLoaded] = useState(true);
     const [modalError, setModalError] = useState(false);
 
-    let path="http://althea-bomboniere.it:5000/";
+    let path="//althea-bomboniere.it:5000/";
 
     useEffect(() => {
         document.title = 'Althea Bomboniere | Area Personale';
@@ -80,7 +80,7 @@ function AddItem() {
         fd.append('description',document.getElementById('description').value);
         fd.append('productImage',file, file.name);
 
-        axios.post('http://althea-bomboniere.it:5000/api/items',fd, {headers: {'auth-token': sessionStorage.getItem('token')}})
+        axios.post('//althea-bomboniere.it:5000/api/items',fd, {headers: {'auth-token': sessionStorage.getItem('token')}})
             .then(() => {
                 setModal(true);
             })
@@ -94,7 +94,7 @@ function AddItem() {
         setItems([]);
         setLoaded(false);
         const myPath = e.target.getAttribute('data-event');
-        await axios.get("http://althea-bomboniere.it:5000/api/items/" + myPath)
+        await axios.get("//althea-bomboniere.it:5000/api/items/" + myPath)
             .then(res => {
                 setLoaded(true);
                 setItems(res.data);
@@ -118,7 +118,7 @@ function AddItem() {
         setItems([]);
         setLoaded(false);
         const myPath = e.target.getAttribute('data-event');
-        await axios.get("http://althea-bomboniere.it:5000/api/items/confetti/" + myPath)
+        await axios.get("//althea-bomboniere.it:5000/api/items/confetti/" + myPath)
             .then(res => {
                 setLoaded(true);
                 setItems(res.data);
@@ -142,7 +142,7 @@ function AddItem() {
         setItems([]);
         setLoaded(false);
         const myPath = e.target.getAttribute('data-event');
-        await axios.get("http://althea-bomboniere.it:5000/api/items/confettate/" + myPath)
+        await axios.get("//althea-bomboniere.it:5000/api/items/confettate/" + myPath)
             .then(res => {
                 setLoaded(true);
                 setItems(res.data);
@@ -165,7 +165,7 @@ function AddItem() {
         setNoElement(false);
         setItems([]);
         setLoaded(false);
-        await axios.get("http://althea-bomboniere.it:5000/api/items/portaciuccio")
+        await axios.get("//althea-bomboniere.it:5000/api/items/portaciuccio")
             .then(res => {
                 setLoaded(true);
                 setItems(res.data);

@@ -13,11 +13,11 @@ const ConfettiAll = () => {
     const [itemsPerPage] = useState(12);
     const [noItems, setNoItems] = useState(false);
 
-    let path="http://althea-bomboniere.it:5000/";
+    let path="//althea-bomboniere.it:5000/";
 
     useEffect(() => {
         const fetchItems = async () => {
-            await axios.post("http://althea-bomboniere.it:5000/api/items/confetti_all")
+            await axios.post("//althea-bomboniere.it:5000/api/items/confetti_all")
                 .then(res => {
                     setLoaded(true);
                     setItems(res.data);

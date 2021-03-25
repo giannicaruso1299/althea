@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-//import {Link} from 'react-router-dom';
 import axios from 'axios';
 import AlertUser from '../alerts/AlertUser';
 import AlertPassword from "../alerts/AlertPassword";
@@ -32,7 +31,7 @@ function Auth() {
             nomeUtente: document.getElementById('nomeUtente').value,
             password: document.getElementById('password').value
         };
-        axios.post("http://althea-bomboniere.it:5000/api/users/login", body)
+        axios.post("//althea-bomboniere.it:5000/api/users/login", body)
             .then(res => {
                     sessionStorage.setItem('token', res.data);
                     window.location.href = '/areapersonale';
