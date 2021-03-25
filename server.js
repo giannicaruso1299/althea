@@ -9,7 +9,11 @@ const users = require('./routes/api/users');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({origin:true, credentials:true}));
+app.use(cors({
+    origin: '//althea-bomboniere.it'
+}));
+
+
 
 const db = require('./config/keys.js').mongoURI;
 

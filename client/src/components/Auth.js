@@ -31,7 +31,12 @@ function Auth() {
             nomeUtente: document.getElementById('nomeUtente').value,
             password: document.getElementById('password').value
         };
-        axios.post("//althea-bomboniere.it:5000/api/users/login", body)
+
+        const options = {
+            "Access-Control-Allow-Origin":"//althea-bomboniere.it:5000"
+        }
+
+        axios.post("//althea-bomboniere.it:5000/api/users/login", body, options)
             .then(res => {
                     sessionStorage.setItem('token', res.data);
                     window.location.href = '/areapersonale';
