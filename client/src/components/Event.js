@@ -12,7 +12,7 @@ function Event(event) {
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(12);
-    const [noItems, setNoItems] = useState(true);
+    const [noItems, setNoItems] = useState(false);
 
     const myPath = event.location.pathname.slice(1);
     const purifiedEvent = myPath.slice(myPath.indexOf('/') + 1);
