@@ -165,7 +165,7 @@ function AddItem() {
         setNoElement(false);
         setItems([]);
         setLoaded(false);
-        await axios.get("//althea-bomboniere.it:5000/api/items/portaciuccio")
+        await axios.get("http://althea-bomboniere.it:5000/api/items/portaciuccio")
             .then(res => {
                 setLoaded(true);
                 setItems(res.data);
