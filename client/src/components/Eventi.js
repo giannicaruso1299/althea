@@ -18,7 +18,7 @@ const Eventi = () => {
 
     useEffect(() => {
         const fetchItems = async () => {
-            await axios.post("//althea-bomboniere.it:5000/api/items/eventi_all")
+            await axios.post("http://althea-bomboniere.it:5000/api/items/eventi_all")
                 .then(res => {
                     setLoaded(true);
                     setItems(res.data);
