@@ -41,6 +41,10 @@ function AddItem() {
             document.getElementById('confettate').classList.remove('d-none');
             document.getElementById('confetti').classList.add('d-none');
             document.getElementById('eventi').classList.add('d-none');
+        } else if (selection === 3) {
+            document.getElementById('eventi').classList.add('d-none');
+            document.getElementById('confetti').classList.add('d-none');
+            document.getElementById('confettate').classList.add('d-none');
         } else {
             document.getElementById('eventi').classList.remove('d-none');
             document.getElementById('confetti').classList.add('d-none');
@@ -208,35 +212,35 @@ function AddItem() {
                             <button
                                 className="btn btn-primary"
                                 data-bs-toggle="collapse"
-                                href="#eventi"
+                                href="#eventi-collapse"
                                 aria-expanded="false"
                                 aria-controls="multiCollapseExample1">Eventi
                             </button>
                             <button
                                 className="btn btn-primary"
                                 data-bs-toggle="collapse"
-                                href="#confetti"
+                                href="#confetti-collapse"
                                 aria-expanded="false"
                                 aria-controls="multiCollapseExample1">Confetti
                             </button>
                             <button
                                 className="btn btn-primary"
                                 data-bs-toggle="collapse"
-                                href="#confettate"
+                                href="#confettate-collapse"
                                 aria-expanded="false"
                                 aria-controls="multiCollapseExample1">Confettate
                             </button>
                             <button
                                 className="btn btn-primary"
                                 data-bs-toggle="collapse"
-                                href="#portaciuccio"
+                                href="#portaciuccio-collapse"
                                 onClick={getPortaciuccio}
                                 aria-expanded="false"
                                 aria-controls="multiCollapseExample1">Portaciuccio
                             </button>
                         </div>
                         <div className="row mt-2">
-                            <div className="collapse multi-collapse text-center" id="eventi">
+                            <div className="collapse multi-collapse text-center" id="eventi-collapse">
                                 <div className="btn-group flex-wrap" role="group">
                                     {events.map(event => (
                                         <button
@@ -265,7 +269,7 @@ function AddItem() {
                             </div>
                         </div>
                         <div className="row mt-2">
-                            <div className="collapse multi-collapse text-center" id="confetti">
+                            <div className="collapse multi-collapse text-center" id="confetti-collapse">
                                 <div className="btn-group flex-wrap" role="group">
                                     {confetti.map(confetto => (
                                         <button
@@ -294,7 +298,7 @@ function AddItem() {
                             </div>
                         </div>
                         <div className="row mt-2">
-                            <div className="collapse multi-collapse text-center" id="confettate">
+                            <div className="collapse multi-collapse text-center" id="confettate-collapse">
                                 <div className="btn-group flex-wrap" role="group">
                                     {confettate.map(confettata => (
                                         <button
@@ -323,7 +327,7 @@ function AddItem() {
                             </div>
                         </div>
                         <div className="row mt-3 justify-content-center">
-                            <div className="collapse multi-collapse" id='portaciuccio'>
+                            <div className="collapse multi-collapse" id='portaciuccio-collapse'>
                                 {!loaded && (
                                     <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80}/>
                                 )}
@@ -392,7 +396,7 @@ function AddItem() {
                         <FormGroup row>
                             <Label for="exampleFile" sm={2}>File</Label>
                             <Col sm={10}>
-                                <Input type="file" name="file" id="exampleFile" onChange={handleFile}/>
+                                <Input type="file" className="form-control" name="file" id="exampleFile" onChange={handleFile}/>
                             </Col>
                         </FormGroup>
                         <FormGroup check row>

@@ -167,6 +167,70 @@ router.post('/update', verify, upload.single('productImage'), async (req, res) =
         })
 })
 
+router.post('/eventi_all', (req, res) => {
+    Item.find({category: 'Eventi'})
+        .sort({date: -1})
+        .limit(24)
+        .then(items => {
+            if (items.length === 0) {
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.status(200).send(items);
+            }
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+})
+
+router.post('/confettate_all', (req, res) => {
+    Item.find({category: 'Confettate'})
+        .sort({date: -1})
+        .limit(24)
+        .then(items => {
+            if (items.length === 0) {
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.status(200).send(items);
+            }
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+})
+
+router.post('/confetti_all', (req, res) => {
+    Item.find({category: 'Confetti'})
+        .sort({date: -1})
+        .limit(24)
+        .then(items => {
+            if (items.length === 0) {
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.status(200).send(items);
+            }
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+})
+
+router.post('/portaciuccio', (req, res) => {
+    Item.find({category: 'Portaciuccio'})
+        .sort({date: -1})
+        .limit(24)
+        .then(items => {
+            if (items.length === 0) {
+                res.status(400).send("Nessun elemento");
+            } else {
+                res.status(200).send(items);
+            }
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+})
+
 router.get('/confetti/:colore',(req,res) => {
     Item.find({$and: [{category:"Confetti"},{$or: [{colore:req.params.colore},{colore:capitalize(req.params.colore)}]}]})
         .then(items => {
@@ -195,21 +259,6 @@ router.get('/confettate/:event',(req,res) => {
                 console.log(item.name);
             });
         });
-})
-
-router.get('/portaciuccio', (req, res) => {
-    Item.find({category:"Portaciuccio"})
-        .then(items => {
-            if (items.length === 0) {
-                res.status(400).send("Nessun elemento");
-            } else {
-                res.json(items);
-            }
-            console.log(`Portaciuccio: elements in db:`);
-            items.forEach(item => {
-                console.log(item.name);
-            });
-        })
 })
 
 // @route   POST api/items

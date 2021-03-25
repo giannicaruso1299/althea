@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 
 function Header() {
@@ -26,7 +27,7 @@ function Header() {
     const createPath = (e) => {
         e.preventDefault();
         const html = e.target;
-        window.location.href = "/" + html.innerHTML.toLowerCase();
+        window.location.href = "/eventi/" + html.innerHTML.toLowerCase();
     }
 
     const createPathConfettate = (e) => {
@@ -49,7 +50,7 @@ function Header() {
                 </div>
                 <div className="row w-100">
                     <div className="col-12 d-lg-block d-none pt-4">
-                        <nav className="navbar bg-transparent navbar-expand-lg" id="myLinks">
+                        <nav className="navbar bg-transparent navbar-expand-xxl" id="myLinks">
                             <ul className="navbar-nav">
                                 <div className="row">
                                     <div className="col-3">
@@ -59,7 +60,9 @@ function Header() {
                                     </div>
                                     <div className="col-2">
                                         <li className="nav-item lista" onMouseEnter={()=>setIsShown2(true)} onMouseLeave = {()=>setIsShown2(false)}>
-                                            <a className="nav-link h-50" href="/">Eventi</a>
+                                            <Link to="/eventi">
+                                                <p className="nav-link h-50">Eventi</p>
+                                            </Link>
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown2 && (
                                                     list2.map(list => (
@@ -73,7 +76,9 @@ function Header() {
                                     </div>
                                     <div className="col-2">
                                         <li className="nav-item d-sm-block d-none" onMouseEnter={()=>setIsShown3(true)} onMouseLeave = {()=>setIsShown3(false)}>
-                                            <a className="nav-link" href="/">Confettate</a>
+                                            <Link to="/confettate">
+                                                <p className="nav-link">Confettate</p>
+                                            </Link>
                                             <ul className="drop-menu menu-1 text-center mt-0 dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown3 && (
                                                     list3.map(list => (
@@ -87,7 +92,9 @@ function Header() {
                                     </div>
                                     <div className="col-md-2 col-sm-6">
                                         <li className="nav-item d-sm-block d-none" onMouseEnter={()=>setIsShown4(true)} onMouseLeave = {()=>setIsShown4(false)}>
-                                            <a className="nav-link" href="/">Confetti</a>
+                                            <Link to="/confetti">
+                                                <p className="nav-link">Confetti</p>
+                                            </Link>
                                             <ul className="drop-menu menu-1 text-center dropdown-menu-sm-left d-sm-block d-none">
                                                 {isShown4 && (
                                                     list4.map(list => (
@@ -101,7 +108,9 @@ function Header() {
                                     </div>
                                     <div className="col-md-2 col-sm-6">
                                         <li className="nav-item d-sm-block d-none">
-                                            <a className="nav-link" href="/">Portaciuccio</a>
+                                            <Link to="/portaciuccio">
+                                                <p className="nav-link">Portaciuccio</p>
+                                            </Link>
                                         </li>
                                     </div>
                                 </div>
@@ -140,7 +149,9 @@ function Header() {
                             <div className="row">
                                 <div className="col-6 d-flex align-items-center">
                                     <li className="nav-item">
-                                        <a className="nav-link p-0" href="/">Eventi</a>
+                                        <Link to="/eventi">
+                                            <p className="nav-link p-0">Eventi</p>
+                                        </Link>
                                     </li>
                                 </div>
                                 <div className="col-6 d-flex align-items-center justify-content-end">
@@ -165,7 +176,9 @@ function Header() {
                             <div className="row">
                                 <div className="col-6 d-flex align-items-center">
                                     <li className="nav-item">
-                                        <a className="nav-link p-0" href="/">Confettate</a>
+                                        <Link to="/confettate">
+                                            <p className="nav-link p-0">Confettate</p>
+                                        </Link>
                                     </li>
                                 </div>
                                 <div className="col-6 d-flex align-items-center justify-content-end">
@@ -190,7 +203,9 @@ function Header() {
                             <div className="row">
                                 <div className="col-6 d-flex align-items-center">
                                     <li className="nav-item">
-                                        <a className="nav-link p-0" href="/">Confetti</a>
+                                        <Link to="/confetti">
+                                            <p className="nav-link p-0">Confetti</p>
+                                        </Link>
                                     </li>
                                 </div>
                                 <div className="col-6 d-flex align-items-center justify-content-end">
@@ -215,7 +230,9 @@ function Header() {
                         </ul>
                         <div className="row">
                             <div className="col-12 d-flex align-items-center justify-content-start">
-                                <a className="nav-link pl-0" href="/" style={{fontSize: "3.204724409448819vh"}}>Portaciuccio</a>
+                                <Link to="/portaciuccio">
+                                    <p className="nav-link pl-0" style={{fontSize: "3.204724409448819vh"}}>Portaciuccio</p>
+                                </Link>
                             </div>
                         </div>
                     </div>

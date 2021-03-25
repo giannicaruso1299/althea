@@ -13,9 +13,9 @@ function Pagination({itemsPerPage, totalItems, paginate}) {
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item mx-1">
-                        <a onClick={() => paginate(number)} className="page-link">
+                        <button onClick={() => paginate(number)} className="page-link">
                             {number}
-                        </a>
+                        </button>
                     </li>
                 ))}
             </ul>

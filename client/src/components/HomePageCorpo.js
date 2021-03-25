@@ -23,7 +23,7 @@ function HomePageCorpo() {
                                 <img className="d-block w-100" src={require("../img/foto_homepage/lg/1.png")} alt="First slide"/>
                             </div>
                             {array2.map(item => (
-                                <div className="carousel-item">
+                                <div className="carousel-item" key={item}>
                                     <img className="d-block w-100" src={require(`../img/foto_homepage/lg/${item}.png`)} alt={`${item} slide`}/>
                                 </div>
                             ))}
@@ -40,7 +40,7 @@ function HomePageCorpo() {
                                 <img className="d-block w-100" src={require(`../img/foto_homepage/sm/8.png`)} alt="First slide"/>
                             </div>
                             {array.map(item => (
-                                <div className="carousel-item">
+                                <div className="carousel-item" key={item}>
                                     <img className="d-block" src={require(`../img/foto_homepage/sm/${item}.png`)} alt={`${item} slide`}/>
                                 </div>
                             ))}

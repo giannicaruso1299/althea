@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import axios from "axios";
 import {Modal, ModalBody, ModalHeader} from "reactstrap";
 
-function ItemCard({items, path, edit, noElement, loaded}) {
+function ItemCard({items, path, edit}) {
 
     const [formModalEdit, setFormModalEdit] = useState(false);
     const [modalEdited, setModalEdited] = useState(false);
@@ -11,6 +11,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
     const [modalDeleted, setModalDeleted] = useState(false);
     const [item, setItem] = useState({});
     const [file, setFile] = useState('');
+    const [select, setSelect] = useState('');
 
     const handleFile = (e) => {
         const fullFile = e.target.files[0];
@@ -58,25 +59,28 @@ function ItemCard({items, path, edit, noElement, loaded}) {
 
         e.preventDefault();
 
+        const category = e.target.getAttribute('data-category');
+
         let evento;
         let colore;
         let conf_event;
 
-        if (document.getElementById('evento') === undefined || document.getElementById('evento') === null) {
-            evento = '';
-        } else {
-            evento = document.getElementById('evento').value;
-        }
-        if (document.querySelector('#colore') === undefined || document.querySelector('#colore') === null) {
+        if (category === 'Eventi') {
+            evento = select;
             colore = '';
-        } else {
-            colore = document.querySelector('#colore').value;
-        }
-        if (document.querySelector('#conf_event') === undefined || document.querySelector('#conf_event') === null) {
             conf_event = '';
-        } else {
-            conf_event = document.querySelector('#conf_event').value;
+        } else if (category === 'Confetti') {
+            evento = '';
+            colore = select;
+            conf_event = '';
+        } else if (category === 'Confettate') {
+            evento = '';
+            colore = '';
+            conf_event = select;
         }
+
+        console.log(evento);
+
         if (file !== '') {
             const fd = new FormData();
             fd.append('id', e.target.getAttribute('data-value'));
@@ -128,6 +132,10 @@ function ItemCard({items, path, edit, noElement, loaded}) {
         window.location.reload();
     }
 
+    const setSelects = (e) => {
+        setSelect(e.target.value);
+    }
+
     const toggleDelete = (e) => {
         e.preventDefault();
         setModalConfirmDelete(!modalConfirmDelete);
@@ -142,7 +150,6 @@ function ItemCard({items, path, edit, noElement, loaded}) {
         e.preventDefault();
         setFormModalEdit(!formModalEdit);
     }
-
     return (
         <div className="row mb-5 d-flex flex-row" style={{fontFamily:"Open Sans"}}>
             {items.map(item => (
@@ -216,7 +223,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
                             Sei sicuro di voler modificare l'elemento?
                         </ModalHeader>
                         <ModalBody className="text-center">
-                            <button className="btn btn-success mr-2" onClick={editElement} data-value={item._id}>Sì</button>
+                            <button className="btn btn-success mr-2" data-category={item.category} onClick={editElement} data-value={item._id}>Sì</button>
                             <button className="btn btn-danger" onClick={toggleEdit} data-value={item._id}>No</button>
                         </ModalBody>
                     </Modal>
@@ -233,7 +240,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
                                 {item.category === 'Eventi' && (
                                     <div className="mb-3">
                                         <label className="form-label">Evento</label>
-                                        <select className="form-select" id="evento" placeholder={item.event}>
+                                        <select className="form-select" id="evento" defaultValue={item.event} onChange={setSelects} placeholder={item.event}>
                                             {events.map(event => (
                                                 <option key={event}>{event}</option>
                                             ))}
@@ -243,7 +250,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
                                 {item.category === 'Confetti' && (
                                     <div className="mb-3">
                                         <label className="form-label">Colore</label>
-                                        <select className="form-select" id="colore" placeholder={item.colore}>
+                                        <select className="form-select" id="colore" defaultValue={item.colore} onChange={setSelects} placeholder={item.colore}>
                                             {confetti.map(colore => (
                                                 <option key={colore}>{colore}</option>
                                             ))}
@@ -253,7 +260,7 @@ function ItemCard({items, path, edit, noElement, loaded}) {
                                 {item.category === 'Confettate' && (
                                     <div className="mb-3">
                                         <label className="form-label">Evento</label>
-                                        <select className="form-select" id="conf_event" placeholder={item.conf_event}>
+                                        <select className="form-select" id="conf_event" defaultValue={item.conf_event} onChange={setSelects} placeholder={item.conf_event}>
                                             {confettate.map(evento => (
                                                 <option key={evento}>{evento}</option>
                                             ))}

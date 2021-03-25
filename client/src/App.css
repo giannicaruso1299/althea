@@ -35,7 +35,7 @@ html, body {
 
 #myFooter {
     background-color: #eee;
-    font-family: "Source Sans Pro", serif;
+    font-family: "Open Sans", serif;
 }
 
 .normal-font {
@@ -53,11 +53,7 @@ html, body {
     outline: none;
 }
 
-.nav-link-resp:active {
-    color: orange;
-}
-
-.nav-link:active {
+.nav-link:hover {
     color: orange;
     text-decoration: none;
 }
@@ -354,7 +350,10 @@ li:hover > ul.drop-menu li:nth-child(6) {
         max-width: 300px;
     }
     .flip-card-inner {
-        max-height: 200px;
+        max-height: 170px;
+    }
+    .flip-card-inner img {
+        max-height: 170px;
     }
     .flip-card-back {
         bottom: 200px;
@@ -546,6 +545,7 @@ li:hover > ul.drop-menu li:nth-child(6) {
 }
 
 #ctf {
+    width: 15%;
     width: 15%;
 }
 

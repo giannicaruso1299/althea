@@ -1,13 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import Header from "./Header";
-import Affiliati from "./Affiliati";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
+import Affiliati from "./Affiliati";
+import Header from "./Header";
 import Loader from "react-loader-spinner";
 import Item from "./Item";
 import Pagination from "./Pagination";
 
-function Confetti(colore) {
-
+const ConfettateAll = () => {
     const [loaded, setLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -16,16 +15,12 @@ function Confetti(colore) {
 
     let path="http://althea-bomboniere.it:5000/";
 
-    const myPath = colore.location.pathname.slice(1);
-    const purifiedColor = myPath.slice(myPath.indexOf('/') + 1);
-
     useEffect(() => {
         const fetchItems = async () => {
-            const path = "http://althea-bomboniere.it:5000/api/items/" + myPath;
-            await axios.get(path)
+            await axios.post("http://althea-bomboniere.it:5000/api/items/confettate_all")
                 .then(res => {
-                    setItems(res.data)
-                    setLoaded(true)
+                    setLoaded(true);
+                    setItems(res.data);
                 })
                 .catch(err => {
                     if (err.response.status === 400) {
@@ -34,26 +29,25 @@ function Confetti(colore) {
                             setNoItems(true);
                         }
                     }
-                })
+                });
         }
-        document.title = 'Althea Bomboniere | Confetti';
-        fetchItems().then(() => console.log("fatto"));
-    },[colore.location.pathname, myPath]);
+        document.title = 'Althea Bomboniere | Confettate';
+        fetchItems().then(() => console.log("Fatto"))
+    },[]);
 
     const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage
     const currentItem = items.slice(indexOfFirstItem, indexOfLastItem);
 
     const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber)
+        setCurrentPage(pageNumber);
     }
 
     return (
         <div className="container-fluid">
             <Affiliati/>
             <Header/>
-            <h1 className="text-center mt-3">I nostri confetti<br/>Di tutti i gusti e colori!</h1>
-            <h1 className="text-center mt-1 text-capitalize">{purifiedColor}</h1>
+            <h1 className="text-center mt-3">Le nostre confettate per un ricevimento da sogno</h1>
             {(!loaded) && (
                 <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80} />
             )}
@@ -66,4 +60,4 @@ function Confetti(colore) {
     )
 }
 
-export default Confetti;
+export default ConfettateAll;
