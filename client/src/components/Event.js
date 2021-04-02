@@ -17,11 +17,10 @@ function Event(event) {
     const myPath = event.location.pathname.slice(1);
     const purifiedEvent = myPath.slice(myPath.indexOf('/') + 1);
 
-    let path="//althea-bomboniere.it:5000/";
+    let path="//althea-bomboniere.it/";
     useEffect(() => {
-        console.log(myPath);
         const fetchItems = async () => {
-            await axios.get("//althea-bomboniere.it:5000/api/items/" + purifiedEvent)
+            await axios.get("//althea-bomboniere.it/api/items/" + purifiedEvent)
                 .then(res => {
                     setLoaded(true);
                     setItems(res.data);
