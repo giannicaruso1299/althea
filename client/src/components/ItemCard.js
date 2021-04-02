@@ -26,7 +26,7 @@ function ItemCard({items, path, edit}) {
 
     const handleFormModalEdit = async (e) => {
         const id = e.target.getAttribute('data-value');
-        await axios.get('//althea-bomboniere.it:5000/api/items/findItem/' + id, {headers: {'auth-token': sessionStorage.getItem('token')}})
+        await axios.get('//althea-bomboniere.it/api/items/findItem/' + id, {headers: {'auth-token': sessionStorage.getItem('token')}})
             .then(res => {
                 setFormModalEdit(true);
                 setItem(res.data);
@@ -41,7 +41,7 @@ function ItemCard({items, path, edit}) {
     const handleDelete = async (e) => {
         let elemTarget = e.target;
         let id = elemTarget.getAttribute('data-value');
-        await axios.delete('//althea-bomboniere.it:5000/api/items/' + id, {headers: {'auth-token': sessionStorage.getItem('token')}})
+        await axios.delete('//althea-bomboniere.it/api/items/' + id, {headers: {'auth-token': sessionStorage.getItem('token')}})
             .then(() => {
                 setModalDeleted(true);
             })
@@ -90,7 +90,7 @@ function ItemCard({items, path, edit}) {
             fd.append('conf_event', conf_event);
             fd.append('description',document.getElementById('description').value);
             fd.append('productImage',file, file.name);
-            await axios.post('//althea-bomboniere.it:5000/api/items/update',fd, {headers: {
+            await axios.post('//althea-bomboniere.it/api/items/update',fd, {headers: {
                     'auth-token': sessionStorage.getItem('token'),
                 }})
                 .then(() => {
@@ -108,7 +108,7 @@ function ItemCard({items, path, edit}) {
                 conf_event: conf_event,
                 description: document.getElementById('description').value
             }
-            await axios.post('//althea-bomboniere.it:5000/api/items/updatetext',payload, {headers: {
+            await axios.post('//althea-bomboniere.it/api/items/updatetext',payload, {headers: {
                     'auth-token': sessionStorage.getItem('token'),
                 }})
                 .then(() => {
