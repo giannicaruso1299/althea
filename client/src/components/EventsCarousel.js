@@ -1,5 +1,6 @@
 import React from 'react';
 import 'animate.css/animate.min.css';
+import {Link} from "react-router-dom";
 
 function EventCarousel() {
 
@@ -32,41 +33,51 @@ function EventCarousel() {
                                 aria-label="Slide 5"/>
                     </div>
                     <div className="carousel-inner">
-                        <div className="carousel-item active" data-bs-interval="10000">
-                            <img onMouseEnter={createAnimation} onMouseLeave={removeAnimation} src={require('../img/foto_homepage/carousel/lg/battesimo.png')} className="d-block w-100" alt="..."/>
+                            <div className="carousel-item active" data-bs-interval="10000">
+                                <Link to="/eventi/battesimo">
+                                    <img onMouseEnter={createAnimation} onMouseLeave={removeAnimation} src={require('../img/foto_homepage/carousel/lg/battesimo.png')} className="d-block w-100" alt="..."/>
+                                </Link>
                                 <div className="carousel-caption d-none d-md-block">
                                     <h5 className="h3">Battesimo</h5>
                                     <p className="lead">Potrai trovare tutti i tipi di oggetti per il Battesimo</p>
                                 </div>
-                        </div>
-                        <div className="carousel-item" data-bs-interval="2000">
-                            <img src={require('../img/foto_homepage/carousel/lg/laurea.png')} className="d-block w-100" alt="..."/>
+                            </div>
+                            <div className="carousel-item" data-bs-interval="2000">
+                                <Link to="/eventi/laurea">
+                                    <img src={require('../img/foto_homepage/carousel/lg/laurea.png')} className="d-block w-100" alt="..."/>
+                                </Link>
                                 <div className="carousel-caption d-none d-md-block">
                                     <h5 className="h3">Laurea</h5>
                                     <p className="lead">Vieni a vedere i nostri prodotti per laurea</p>
                                 </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={require('../img/foto_homepage/carousel/lg/matrimonio.png')} className="d-block w-100" alt="..."/>
+                            </div>
+                            <div className="carousel-item">
+                                <Link to="/eventi/matrimonio">
+                                    <img src={require('../img/foto_homepage/carousel/lg/matrimonio.png')} className="d-block w-100" alt="..."/>
+                                </Link>
                                 <div className="carousel-caption d-none d-md-block">
                                     <h5 className="h3">Matrimonio</h5>
                                     <p className="lead">Festeggia le tue nozze da noi con il nostro fantastico catalogo</p>
                                 </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={require('../img/foto_homepage/carousel/lg/nascita.png')} className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-none d-md-block">
-                                <h5 className="h3">Nascita</h5>
-                                <p className="lead">Tutte le nostre bomboniere per nascita le trovi qui</p>
                             </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={require('../img/foto_homepage/carousel/lg/prima_comunione.png')} className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-none d-md-block">
-                                <h5 className="h3">Prima Comunione</h5>
-                                <p className="lead">Da noi la Prima Comunione sarà ancora più speciale</p>
+                            <div className="carousel-item">
+                                <Link to="/eventi/nascita">
+                                    <img src={require('../img/foto_homepage/carousel/lg/nascita.png')} className="d-block w-100" alt="..."/>
+                                </Link>
+                                <div className="carousel-caption d-none d-md-block">
+                                    <h5 className="h3">Nascita</h5>
+                                    <p className="lead">Tutte le nostre bomboniere per nascita le trovi qui</p>
+                                </div>
                             </div>
-                        </div>
+                            <div className="carousel-item">
+                                <Link to="/eventi/prima%20comunione">
+                                    <img src={require('../img/foto_homepage/carousel/lg/prima_comunione.png')} className="d-block w-100" alt="..."/>
+                                </Link>
+                                <div className="carousel-caption d-none d-md-block">
+                                    <h5 className="h3">Prima Comunione</h5>
+                                    <p className="lead">Da noi la Prima Comunione sarà ancora più speciale</p>
+                                </div>
+                            </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                             data-bs-slide="prev">
@@ -96,41 +107,51 @@ function EventCarousel() {
                                 aria-label="Slide 5"/>
                     </div>
                     <div className="carousel-inner">
-                        <div className="carousel-item active" data-bs-interval="10000">
-                            <img src={require('../img/foto_homepage/carousel/sm/battesimo.png')} className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-block d-md-none">
-                                <h5 className="h2">Battesimo</h5>
-                                <p className="lead">Potrai trovare tutti i tipi di oggetti per il Battesimo</p>
+                            <div className="carousel-item active" data-bs-interval="10000">
+                                <Link to="/eventi/battesimo">
+                                    <img src={require('../img/foto_homepage/carousel/sm/battesimo.png')} className="d-block w-100" alt="..."/>
+                                </Link>
+                                <div className="carousel-caption d-block d-md-none">
+                                    <h5 className="h2">Battesimo</h5>
+                                    <p className="lead">Potrai trovare tutti i tipi di oggetti per il Battesimo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="carousel-item" data-bs-interval="10000">
-                            <img src={require('../img/foto_homepage/carousel/sm/laurea.png')} className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-block d-md-none">
-                                <h5 className="h2">Laurea</h5>
-                                <p className="lead">Vieni a vedere i nostri prodotti per laurea</p>
+                            <div className="carousel-item" data-bs-interval="10000">
+                                <Link to="eventi/laurea">
+                                    <img src={require('../img/foto_homepage/carousel/sm/laurea.png')} className="d-block w-100" alt="..."/>
+                                </Link>
+                                <div className="carousel-caption d-block d-md-none">
+                                    <h5 className="h2">Laurea</h5>
+                                    <p className="lead">Vieni a vedere i nostri prodotti per laurea</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={require('../img/foto_homepage/carousel/sm/matrimonio.png')} className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-block d-md-none">
-                                <h5 className="h3">Matrimonio</h5>
-                                <p className="lead">Festeggia le tue nozze da noi con il nostro fantastico catalogo</p>
+                            <div className="carousel-item">
+                                <Link to="/eventi/matrimonio">
+                                    <img src={require('../img/foto_homepage/carousel/sm/matrimonio.png')} className="d-block w-100" alt="..."/>
+                                </Link>
+                                <div className="carousel-caption d-block d-md-none">
+                                    <h5 className="h3">Matrimonio</h5>
+                                    <p className="lead">Festeggia le tue nozze da noi con il nostro fantastico catalogo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={require('../img/foto_homepage/carousel/sm/nascita.png')} className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-block d-md-none">
-                                <h5 className="h3">Nascita</h5>
-                                <p className="lead">Tutte le nostre bomboniere per nascita le trovi qui</p>
+                            <div className="carousel-item">
+                                <Link to="/eventi/nascita">
+                                    <img src={require('../img/foto_homepage/carousel/sm/nascita.png')} className="d-block w-100" alt="..."/>
+                                </Link>
+                                <div className="carousel-caption d-block d-md-none">
+                                    <h5 className="h3">Nascita</h5>
+                                    <p className="lead">Tutte le nostre bomboniere per nascita le trovi qui</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={require('../img/foto_homepage/carousel/sm/prima_comunione.png')} className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-block d-md-none">
-                                <h5 className="h3">Prima Comunione</h5>
-                                <p className="lead">Da noi la Prima Comunione sarà ancora più speciale</p>
+                            <div className="carousel-item">
+                                <Link to="/eventi/prima%20comunione">
+                                    <img src={require('../img/foto_homepage/carousel/sm/prima_comunione.png')} className="d-block w-100" alt="..."/>
+                                </Link>
+                                <div className="carousel-caption d-block d-md-none">
+                                    <h5 className="h3">Prima Comunione</h5>
+                                    <p className="lead">Da noi la Prima Comunione sarà ancora più speciale</p>
+                                </div>
                             </div>
-                        </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDarkSm"
                             data-bs-slide="prev">

@@ -21,6 +21,7 @@ function Footer() {
                             <div className="text-center">
                                 <h4 className="h2 pt-md-5 pt-3 font-weight-bold normal-font">Veniteci a trovare!</h4>
                                 <hr className="mx-md-0 mx-3"/>
+                                <h4>Cercaci su Google!</h4>
                                 <a rel="noopener noreferrer" href="https://www.google.com/maps/place/Caruso+Adelfio/@38.0412491,13.110435,15z/data=!4m8!1m2!2m1!1salthea+bomboniere+partinico!3m4!1s0x13198db2eab368b9:0x9beb6a033d5b2704!8m2!3d38.0412491!4d13.1191897" target="_blank">
                                     <img src={require("../img/maps.png")} className="g-maps" alt="Google Maps"/>
                                 </a>
