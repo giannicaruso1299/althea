@@ -13,7 +13,7 @@ const ConfettiAll = () => {
     const [itemsPerPage] = useState(12);
     const [noItems, setNoItems] = useState(false);
 
-    let path="//althea-bomboniere.it/";
+    let path="http://althea-bomboniere.it:5000/";
 
     useEffect(() => {
         const fetchItems = async () => {
