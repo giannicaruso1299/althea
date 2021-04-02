@@ -19,6 +19,7 @@ const ConfettiAll = () => {
         const fetchItems = async () => {
             await axios.post("//althea-bomboniere.it/api/items/confetti_all")
                 .then(res => {
+                    console.log(path + res.data.productImage);
                     setLoaded(true);
                     setItems(res.data);
                 })
