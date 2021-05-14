@@ -13,6 +13,7 @@ function Confettate(event) {
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(12);
+    const [noItems, setNoItems] = useState(false);
 
     let path="//althea-bomboniere.it/";
 
@@ -25,7 +26,12 @@ function Confettate(event) {
                     setLoaded(true);
                 })
                 .catch(err => {
-                    console.log(err);
+                    if (err.response.status === 400) {
+                        if (err.response.data === "Nessun elemento") {
+                            setLoaded(true);
+                            setNoItems(true);
+                        }
+                    }
                 })
         }
         const myPath = event.location.pathname.slice(1);
@@ -54,6 +60,9 @@ function Confettate(event) {
           <h1 className="mt-4 text-center">{title}</h1>
           {(!loaded) && (
               <Loader type="Rings" className="text-center" color="#00BFFF" height={80} width={80} />
+          )}
+          {noItems && (
+              <h4 className="text-center mt-2">Nessun articolo per la ricerca corrente</h4>
           )}
           <Item items={currentItem} path={path}/>
           <Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>
